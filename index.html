@@ -282,19 +282,19 @@
       
         
           
-            <h1 id="Hexo-博客搭建"><a href="#Hexo-博客搭建" class="headerlink" title="Hexo 博客搭建"></a>Hexo 博客搭建</h1><h2 id="搭建步骤："><a href="#搭建步骤：" class="headerlink" title="搭建步骤："></a>搭建步骤：</h2><h3 id="安装nodeJS："><a href="#安装nodeJS：" class="headerlink" title="安装nodeJS："></a>安装nodeJS：</h3><ul>
+            <h1 id="Hexo-博客搭建步骤"><a href="#Hexo-博客搭建步骤" class="headerlink" title="Hexo 博客搭建步骤"></a>Hexo 博客搭建步骤</h1><h2 id="安装nodeJS："><a href="#安装nodeJS：" class="headerlink" title="安装nodeJS："></a>安装nodeJS：</h2><ul>
 <li>进入nodeJS官网下载nodeJS  (官网地址：<a href="https://nodejs.org/en" target="_blank" rel="external">https://nodejs.org/en</a>)</li>
-<li>安装成功后在终端进行测试：输入node -v，回车查看<h3 id="安装hexo："><a href="#安装hexo：" class="headerlink" title="安装hexo："></a>安装hexo：</h3></li>
+<li>安装成功后在终端进行测试：输入node -v，回车查看<h2 id="安装hexo："><a href="#安装hexo：" class="headerlink" title="安装hexo："></a>安装hexo：</h2></li>
 <li>在终端输入npm install hexo -g,然后回车</li>
 <li>若此时终端出现root Administrator等错误时，需重新输入sudo npm install hero -g，以管理员方式安装，回车。</li>
 <li>输入管理员密码，回车</li>
-<li>测试hexo是否安装成功：在终端输入hexo，回车查看，如在终端出现如下图所示的代码，则安装成功。<br><img src="image/picture1.jpg" alt="picture1"><h3 id="创建目录并进入-在桌面创建为例"><a href="#创建目录并进入-在桌面创建为例" class="headerlink" title="创建目录并进入(在桌面创建为例):"></a>创建目录并进入(在桌面创建为例):</h3></li>
+<li>测试hexo是否安装成功：在终端输入hexo，回车查看，如在终端出现如下图所示的代码，则安装成功。<br><img src="image/picture1.jpg" alt="picture1"><h2 id="创建目录并进入-以桌面创建为例"><a href="#创建目录并进入-以桌面创建为例" class="headerlink" title="创建目录并进入(以桌面创建为例):"></a>创建目录并进入(以桌面创建为例):</h2></li>
 <li>在终端输入“cd Desktop”,回车,进入电脑桌面</li>
 <li>在终端输入“mkdir blog”，回车，在桌面创建一个名为blog的文件夹</li>
 <li>在终端输入“cd blog”,回车，进入名为blog的文件夹</li>
 <li>在终端输入“hexo init”，回车，初始化hexo的目录</li>
 <li>在终端输入“hexo server”回车，启动本地服务，在成功启动本地服务器后会出现一个本地博客地址：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>,点击进入。</li>
-<li>在进入hexo博客的网站后注册一个账号（我的用户名为“YINGQIQI”）并登陆<h3 id="注册github账号："><a href="#注册github账号：" class="headerlink" title="注册github账号："></a>注册github账号：</h3></li>
+<li>在进入hexo博客的网站后注册一个账号（我的用户名为“YINGQIQI”）并登陆<h2 id="注册github账号："><a href="#注册github账号：" class="headerlink" title="注册github账号："></a>注册github账号：</h2></li>
 <li>首先需要配置ssh-key的值：在终端输入“ssh-keygen”，连续回车三次</li>
 <li>在终端输入“vim ~/.ssh/id_rsa.pub”复制ssh-key的值。</li>
 <li>打开本地博客地址，点击用户名旁边的settings，点击personal settings 里面的SSH and GPG keys，在key的输入框内把之前复制的ssh-key的值输入进去，点击ADD SSH key确认。这样一个博客账号就创建好了。</li>
@@ -302,14 +302,14 @@
 <li>下面将配置github与本地机器验证：</li>
 <li>在终端输入“git config –global user.name”用户名”（例如：git config –global user.name”YINGQIQI”）</li>
 <li>在终端输入“git config –global user.email”邮箱地址”（例如：git config –global user.email”2544360251@qq.com”）</li>
-<li>新建博客域名仓库：<h3 id="配置config-yml："><a href="#配置config-yml：" class="headerlink" title="配置config.yml："></a>配置config.yml：</h3><em>打开桌面上的blog文件夹中的config.yml文件
-</em>在deploy字段的下面的type后面填入“ git”；进入自己本地博客地址把域名仓库的 https的域名地址复制到deploy字段下面的repo后面<h3 id="发布："><a href="#发布：" class="headerlink" title="发布："></a>发布：</h3></li>
+<li>新建博客域名仓库：<h2 id="配置config-yml："><a href="#配置config-yml：" class="headerlink" title="配置config.yml："></a>配置config.yml：</h2><em>打开桌面上的blog文件夹中的config.yml文件
+</em>在deploy字段的下面的type后面填入“ git”；进入自己本地博客地址把域名仓库的 https的域名地址复制到deploy字段下面的repo后面<h2 id="发布："><a href="#发布：" class="headerlink" title="发布："></a>发布：</h2></li>
 <li>在终端输入“cd Desktop”，回车,然后输入“cd blog”，回车，进入blog文件夹中</li>
 <li>在终端输入：“npm install hexo-deployer-git –save”</li>
 <li>在终端输入：“hexo g”，回车，把一些文件转换成css和html文件</li>
-<li>在终端输入：“hexo d”，回车，把生成的网页发布到仓库。</li>
+<li>在终端输入：“hexo d”，回车，把生成的网页发布到仓库。<h1 id="博客使用："><a href="#博客使用：" class="headerlink" title="博客使用："></a>博客使用：</h1><h2 id="更换博客主题"><a href="#更换博客主题" class="headerlink" title="更换博客主题"></a>更换博客主题</h2><h2 id="更换博客题目"><a href="#更换博客题目" class="headerlink" title="更换博客题目"></a>更换博客题目</h2><h2 id="更新博客内容"><a href="#更新博客内容" class="headerlink" title="更新博客内容"></a>更新博客内容</h2></li>
 </ul>
-<h2 id="博客使用："><a href="#博客使用：" class="headerlink" title="博客使用："></a>博客使用：</h2>
+
           
         
       
