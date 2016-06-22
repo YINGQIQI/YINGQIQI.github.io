@@ -23,7 +23,7 @@
 安装hexo：
 在终端输入npm install hexo -g,然后回车
 若此时终端出现root Administrator等错误时，需重新输入sudo npm install">
-<meta property="og:image" content="http://yoursite.com/../../public/images/picture1.jpg">
+<meta property="og:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture1.jpg">
 <meta property="og:image" content="http://yoursite.com/../../public/images/picture12.jpg">
 <meta property="og:image" content="http://yoursite.com/../../public/images/picture2.jpg">
 <meta property="og:image" content="http://yoursite.com/../../public/images/picture3.jpg">
@@ -43,7 +43,8 @@
 <meta property="og:image" content="http://yoursite.com/../../public/images/picture18.jpg">
 <meta property="og:image" content="http://yoursite.com/../../public/images/picture19.jpg">
 <meta property="og:image" content="http://yoursite.com/../../public/images/picture20.jpg">
-<meta property="og:updated_time" content="2016-06-22T13:21:49.000Z">
+<meta property="og:image" content="http://yoursite.com/../../public/images/picture21.jpg">
+<meta property="og:updated_time" content="2016-06-22T13:36:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FirstDay">
 <meta name="twitter:description" content="Hexo 博客搭建步骤安装nodeJS：
@@ -53,7 +54,7 @@
 安装hexo：
 在终端输入npm install hexo -g,然后回车
 若此时终端出现root Administrator等错误时，需重新输入sudo npm install">
-<meta name="twitter:image" content="http://yoursite.com/../../public/images/picture1.jpg">
+<meta name="twitter:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -91,9 +92,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -126,7 +127,7 @@
       
         <h1 id="Hexo-博客搭建步骤"><a href="#Hexo-博客搭建步骤" class="headerlink" title="Hexo 博客搭建步骤"></a>Hexo 博客搭建步骤</h1><h2 id="安装nodeJS："><a href="#安装nodeJS：" class="headerlink" title="安装nodeJS："></a>安装nodeJS：</h2><ul>
 <li>进入nodeJS官网下载nodeJS  (官网地址：<a href="https://nodejs.org/en" target="_blank" rel="external">https://nodejs.org/en</a>)</li>
-<li>安装成功后在终端进行测试：输入node -v，回车查看，如下图所示则安装成功<br><img src="../../public/images/picture1.jpg" alt="picture1"></li>
+<li>安装成功后在终端进行测试：输入node -v，回车查看，如下图所示则安装成功<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture1.jpg" alt="picture1"></li>
 </ul>
 <h2 id="安装hexo："><a href="#安装hexo：" class="headerlink" title="安装hexo："></a>安装hexo：</h2><ul>
 <li>在终端输入npm install hexo -g,然后回车</li>
@@ -173,13 +174,20 @@
 <li>可以在网上下载一些hexo博客的主题，clone主题的https地址<br><img src="../../public/images/picture18.jpg" alt="picture3"></li>
 <li>在终端进入blog里面的themes文件夹中，回车，然后输入“git clone 主题http地址”回车（此过程需要一段时间），例如下图所示：<br><img src="../../public/images/picture19.jpg" alt="picture3"></li>
 <li>此时打开blog文件夹的themes中可以发现多出一个主题文件夹</li>
-<li>在blog文件夹的_config.yml文件中修改主题并保存<br><img src="../../public/images/picture20.jpg" alt="picture3"></li>
+<li>在blog文件夹的_config.yml文件中修改主题并保存<br><img src="../../public/images/picture20.jpg" alt="picture3"><h2 id="更换博客名称"><a href="#更换博客名称" class="headerlink" title="更换博客名称"></a>更换博客名称</h2></li>
+<li>在_config.yml文件中可以修改主题和博客题目以及作者语言等，在修改完后需保存并重新在终端运行<br><img src="../../public/images/picture21.jpg" alt="picture3"></li>
 </ul>
-<h2 id="更换博客题目"><a href="#更换博客题目" class="headerlink" title="更换博客题目"></a>更换博客题目</h2><h2 id="更新博客内容"><a href="#更新博客内容" class="headerlink" title="更新博客内容"></a>更新博客内容</h2>
+<h2 id="更新博客"><a href="#更新博客" class="headerlink" title="更新博客"></a>更新博客</h2><ul>
+<li>在终端输入“hexo new”,创建新日志</li>
+<li>在终端输入“hexo server”，在本地服务器查看博客内容是否有问题</li>
+<li>在终端输入“hexo g”把md文件转化成html文件和css文件</li>
+<li>在终端输入“hexo d”把本地写的博客发布到仓库</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/FirstDay/" data-id="cipqww0c00000g9skcfzedarl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/FirstDay/" data-id="cipqxc7y30000h8skmqe3h0t3" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -190,7 +198,7 @@
   
   
     <a href="/2016/06/22/zhangying/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">zhangying</div>
     </a>
   
@@ -223,7 +231,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -252,7 +260,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
