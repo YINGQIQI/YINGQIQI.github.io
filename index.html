@@ -51,9 +51,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -63,6 +63,62 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-meta标签" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/24/meta标签/" class="article-date">
+  <time datetime="2016-06-24T03:50:28.000Z" itemprop="datePublished">2016-06-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/24/meta标签/">meta标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="响应式布局—meta标签"><a href="#响应式布局—meta标签" class="headerlink" title="响应式布局—meta标签"></a>响应式布局—meta标签</h1><h3 id="1、汉字申明编码"><a href="#1、汉字申明编码" class="headerlink" title="1、汉字申明编码"></a>1、汉字申明编码</h3><p>该编码是汉字申明编码。 </p>
+<pre><code>&lt;meta charset=&apos;utf-8&apos; /&gt;  
+</code></pre><h3 id="2、优先使用-IE-最新版本和-Chrome"><a href="#2、优先使用-IE-最新版本和-Chrome" class="headerlink" title="2、优先使用 IE 最新版本和 Chrome"></a>2、优先使用 IE 最新版本和 Chrome</h3><pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;  
+</code></pre><h3 id="3、浏览器内核控制"><a href="#3、浏览器内核控制" class="headerlink" title="3、浏览器内核控制"></a>3、浏览器内核控制</h3><p>目前我国国内浏览器的内核基本都是双内核（webkit和trident）</p>
+<pre><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;&gt; 
+</code></pre><h3 id="4、页面关键字"><a href="#4、页面关键字" class="headerlink" title="4、页面关键字"></a>4、页面关键字</h3><p>“your tags”最好不要超过12个，页面关键字十分重要，可被搜索引擎的爬虫程序收录，用于用户搜索</p>
+<pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;your tags，” /&gt;
+</code></pre><h3 id="5、页面描述"><a href="#5、页面描述" class="headerlink" title="5、页面描述"></a>5、页面描述</h3><p>页面描述尽量不要超过120个字（包括标点符号），同样会被搜索引擎的爬虫程序收录检测，用于用户搜索</p>
+<pre><code>&lt;meta name=“description&quot;content=&quot;120｜ 150 words&quot; /&gt;
+</code></pre><h3 id="6、搜索引擎索引方式"><a href="#6、搜索引擎索引方式" class="headerlink" title="6、搜索引擎索引方式"></a>6、搜索引擎索引方式</h3><p>搜索引擎的引入方式的content值有六种：all none、index、follow、noindex、nofollow<br>这六个值的含义是：</p>
+<p>all：文件将被检索，且页面上的链接可以被查询；</p>
+<p>none：文件将不被检索，且页面上的链接不可以被查询；</p>
+<p>index：文件将被检索；</p>
+<p>follow：页面上的链接可以被查询；</p>
+<p>noindex：文件将不被检索；</p>
+<p>nofollow：页面上的链接不可以被查询。</p>
+<pre><code>&lt;meta name=“robots” content=&quot;index,follow&quot; /&gt; 
+</code></pre><h3 id="7、页面重定向和刷新"><a href="#7、页面重定向和刷新" class="headerlink" title="7、页面重定向和刷新"></a>7、页面重定向和刷新</h3><p>content内的数字代表时间（秒），既多少时间后刷新，如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚）</p>
+<pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&quot; /&gt;
+</code></pre><h3 id="8、网页作者信息"><a href="#8、网页作者信息" class="headerlink" title="8、网页作者信息"></a>8、网页作者信息</h3><pre><code>&lt;meta name=&quot;author&quot; content=&quot;author name&quot; /&gt;
+</code></pre><h2 id="在线制作icon"><a href="#在线制作icon" class="headerlink" title="在线制作icon"></a>在线制作icon</h2><h2 id="更换自己博客的icon？？？"><a href="#更换自己博客的icon？？？" class="headerlink" title="更换自己博客的icon？？？"></a>更换自己博客的icon？？？</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/24/meta标签/" data-id="ciptfn4y200031sskmm0akpam" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-css3单位" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -192,7 +248,7 @@ margin-bottom: 10%;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/css3单位/" data-id="cips4vpv600017ask76dhn6u8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/23/css3单位/" data-id="ciptfn4xw00011sskt0n26h0k" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -286,7 +342,7 @@ margin-bottom: 10%;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/FirstDay/" data-id="cips4vpv100007asknox7x8tk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/FirstDay/" data-id="ciptfn4xr00001ssks5n8nek3" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -323,7 +379,7 @@ margin-bottom: 10%;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/zhangying/" data-id="cips4vpvd00037askc5t7ydnf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/zhangying/" data-id="ciptfn4y400041sskqrdyph3x" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -368,7 +424,7 @@ margin-bottom: 10%;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="cips4vpv900027askcm8xl9ws" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciptfn4xz00021sskwvifwxh9" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -403,9 +459,13 @@ margin-bottom: 10%;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/24/meta标签/">meta标签</a>
+          </li>
         
           <li>
             <a href="/2016/06/23/css3单位/">(no title)</a>
@@ -436,7 +496,7 @@ margin-bottom: 10%;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
