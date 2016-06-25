@@ -1,0 +1,693 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="CSS3单位em/rem
+em单位是相对于父级的单位，可用于设置字体的大小和容器的宽高
+含义：em表示的含义是倍数，例如2em表示的含义为父级像素的两倍;rem单位是相对于html文档的单位，可用于设置字体的大小，不可设置容器的宽高
+
+
+举例：
+
+代码如下所示：
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3单位">
+<meta property="og:url" content="http://yoursite.com/2016/06/24/css3单位/index.html">
+<meta property="og:site_name" content="哈七哈七玛">
+<meta property="og:description" content="CSS3单位em/rem
+em单位是相对于父级的单位，可用于设置字体的大小和容器的宽高
+含义：em表示的含义是倍数，例如2em表示的含义为父级像素的两倍;rem单位是相对于html文档的单位，可用于设置字体的大小，不可设置容器的宽高
+
+
+举例：
+
+代码如下所示：
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;">
+<meta property="og:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei1.jpg">
+<meta property="og:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei2.jpg">
+<meta property="og:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei3.jpg">
+<meta property="og:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei4.jpg">
+<meta property="og:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei5.jpg">
+<meta property="og:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei6.jpg">
+<meta property="og:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei7.jpg">
+<meta property="og:updated_time" content="2016-06-25T13:06:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3单位">
+<meta name="twitter:description" content="CSS3单位em/rem
+em单位是相对于父级的单位，可用于设置字体的大小和容器的宽高
+含义：em表示的含义是倍数，例如2em表示的含义为父级像素的两倍;rem单位是相对于html文档的单位，可用于设置字体的大小，不可设置容器的宽高
+
+
+举例：
+
+代码如下所示：
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;">
+<meta name="twitter:image" content="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/24/css3单位/"/>
+
+  <title> css3单位 | 哈七哈七玛 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">哈七哈七玛</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css3单位
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-24T11:50:28+08:00" content="2016-06-24">
+              2016-06-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="CSS3单位"><a href="#CSS3单位" class="headerlink" title="CSS3单位"></a>CSS3单位</h1><h2 id="em-rem"><a href="#em-rem" class="headerlink" title="em/rem"></a>em/rem</h2><ul>
+<li>em单位是相对于父级的单位，可用于设置字体的大小和容器的宽高</li>
+<li>含义：em表示的含义是倍数，例如2em表示的含义为父级像素的两倍;rem单位是相对于html文档的单位，可用于设置字体的大小，不可设置容器的宽高</li>
+</ul>
+<ul>
+<li>举例：</li>
+</ul>
+<p>代码如下所示：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;单位&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;div1&quot; style=&quot;font-size:12px;&quot;&gt;
+    &lt;h1&gt;我是h1&lt;/h1&gt;
+    &lt;h2&gt;
+        &lt;div class=&quot;div3&quot; style=&quot;font-size:2em&quot;&gt;我是div3&lt;/div&gt;
+    &lt;/h2&gt;
+    &lt;div class=&quot;div2&quot; style=&quot;font-size:2em;width:3em;height:4em&quot;&gt;我是div2&lt;/div&gt;
+&lt;/div&gt;    
+&lt;div class=&quot;div4&quot; style=&quot;font-size:4rem&quot; &gt;我是div4&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>浏览器中的效果如下图所示：</p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei1.jpg" alt="danwei"></p>
+<p>分析：</p>
+<p>1、 div1的字号设置为12px；</p>
+<p>2、 h1的字号本身默认为2em，则h1的字号为24px；</p>
+<p>3、 h2的字号默认为1.5em。div3的字号为36px；</p>
+<p>4、 div2的字号为2em，其父级为div1（字号为12px），则div2的字体为24px；</p>
+<p>5、 div4的字号为html默认字体16px的4倍：64px；</p>
+<h2 id="vw、vh"><a href="#vw、vh" class="headerlink" title="vw、vh"></a>vw、vh</h2><ul>
+<li><p>vw和vh是相对于视觉窗口的，用于设置容器大小;</p>
+</li>
+<li><p>含义：作为宽和高的含义，vm和vh代表的是视觉窗口的百分比，如：width：50vw表示占视觉窗口的百分之五十；当浏览器窗口缩小的时候，容器的大小也会随着变小，一般用于响应式的网页设计。</p>
+</li>
+<li>举例：</li>
+</ul>
+<p>代码如下所示：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;单位&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;div1&quot; style=&quot;height:50vh;width:50vw;background:red;&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;    
+</code></pre><p>浏览器效果如图所示，div的长和宽始终保持为浏览器的百分之五十：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei2.jpg" alt="danwei"></p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei3.jpg" alt="danwei"></p>
+<h2 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h2><ul>
+<li>百分比是相对于父级窗口的，用于设置容器大小，也可用于设置字号大小</li>
+<li>举例：</li>
+</ul>
+<p>代码如下所示：</p>
+<p>html：  </p>
+<pre><code>    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;响应式&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;reset.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;xiangyingshi.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;ul&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>css样式：</p>
+<pre><code>ul{
+overflow: hidden;
+margin: 0 auto;
+}
+li{
+width: 30%;
+float: left;
+margin-right:1.2%;
+margin-bottom: 5%;
+min-width: 200px;
+border:2px  black solid;
+}
+ul li img{
+width:80%;
+margin-bottom: 10%;
+}
+</code></pre><p>效果图如下图所示：</p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei4.jpg" alt="danwei"></p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei5.jpg" alt="danwei"></p>
+<p>分析：无论怎么拉缩浏览器，li始终占据父级ul的百分之三十，父级ul继承父级body的宽度    </p>
+<h2 id="px"><a href="#px" class="headerlink" title="px"></a>px</h2><ul>
+<li>px属性是最常用的单位，即可以设置字号大小也可以设置容器的宽高。</li>
+</ul>
+<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><h2 id="maxwidth、maxheight、minheight、minwidth属性"><a href="#maxwidth、maxheight、minheight、minwidth属性" class="headerlink" title="maxwidth、maxheight、minheight、minwidth属性"></a>maxwidth、maxheight、minheight、minwidth属性</h2><ul>
+<li>maxwidth和maxheight用来设置容器等元素的最大宽和高，当元素小于最大宽和高的值时，元素保持为自身的宽高，当元素大于最大宽或高的值时，元素会适应容器的最大宽和高进行调整，不超过maxheight和maxwidth的值。</li>
+<li>minheight和minwidth用来设置容器等元素的最小宽和高，当元素大于最小宽和高的值时，元素保持为自身的宽高，当元素小于最小宽或高的值是，元素会适应容器的最小宽和高进行调整，扩充到最小宽和高。</li>
+<li>maxwidth、maxheight、minheight、minwidth属性的值一般为一个固定像素值。</li>
+<li>仍以上面的百分比的代码案例来分析：给每个li设置了最小宽度，当浏览器缩小到每个li小于200px时，li由于设置了最小宽度不会再继续缩小，而会自动变成两行，把最右边的li挤到下一行。</li>
+<li>效果图如图：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei6.jpg" alt="danwei"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei7.jpg" alt="danwei"></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/24/meta标签/" rel="next" title="meta标签">
+                <i class="fa fa-chevron-left"></i> meta标签
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/25/html5浏览器支持/" rel="prev" title="html5浏览器支持">
+                html5浏览器支持 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3单位"><span class="nav-number">1.</span> <span class="nav-text">CSS3单位</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#em-rem"><span class="nav-number">1.1.</span> <span class="nav-text">em/rem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vw、vh"><span class="nav-number">1.2.</span> <span class="nav-text">vw、vh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百分比"><span class="nav-number">1.3.</span> <span class="nav-text">百分比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#px"><span class="nav-number">1.4.</span> <span class="nav-text">px</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性"><span class="nav-number">2.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#maxwidth、maxheight、minheight、minwidth属性"><span class="nav-number">2.1.</span> <span class="nav-text">maxwidth、maxheight、minheight、minwidth属性</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
