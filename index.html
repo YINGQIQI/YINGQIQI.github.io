@@ -238,6 +238,197 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/28/css3选择器/" itemprop="url">
+                  css3选择器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-28T10:43:01+08:00" content="2016-06-28">
+              2016-06-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="css3选择器"><a href="#css3选择器" class="headerlink" title="css3选择器"></a>css3选择器</h1><h2 id="子元素选择器："><a href="#子元素选择器：" class="headerlink" title="子元素选择器："></a>子元素选择器：</h2><p>语法：div &gt; h1</p>
+<p>含义：选择div下面一级的子元素h1，不同于后代选择器，不会选择div里面的子孙级别的h1</p>
+<h2 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h2><p>语法：div+h1</p>
+<p>含义：选择div下面的、相邻的、同一级别的h1（有且只有一个符合）</p>
+<h2 id="通用兄弟选择器"><a href="#通用兄弟选择器" class="headerlink" title="通用兄弟选择器"></a>通用兄弟选择器</h2><p>语法：div~h1</p>
+<p>含义：选择div下面的、同一级别的h1（可以有多个符合）</p>
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><ul>
+<li>语法1：[class]<br>含义：选择带有class属性的标签</li>
+<li>语法2：[class=”div1”]<br>含义：选择class属性值为div1的标签</li>
+<li>语法3：[class~=”div1”]<br>含义：选择class属性有几个值的，并且用空格隔开的属性值中包含了div1的标签</li>
+<li>语法4：[class^=”div1”]<br>含义：选择class属性以div1开头的标签(div12)</li>
+<li>语法5：[class$=”div1”]<br>含义：选择class属性以div1结尾的标签</li>
+<li>语法6：[class*=”div1”]<br>含义：选择class属性包含了div1的标签(div12)</li>
+<li>语法7：[class|=“div1”]<br>含义：选择class属性以div1开头或者div1-开头的标签（div div-）</li>
+</ul>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><ul>
+<li><h3 id="a标签的伪类"><a href="#a标签的伪类" class="headerlink" title="a标签的伪类"></a>a标签的伪类</h3><p>  a:link{}（a标签在未点击前的状态）</p>
+<p>  a：hover{}（a标签在移动到上面的时候的状态）</p>
+<p>  a:action{}（a标签在点击后的状态）</p>
+</li>
+<li><h3 id="表单的伪类"><a href="#表单的伪类" class="headerlink" title="表单的伪类"></a>表单的伪类</h3><p> input[class=”div1”]:disabled{}（某个input表单元素满足class属性为div1，且满足disabled属性的效果）</p>
+<p> input[class=”div1”]：enabled{}（一般默认情况下就有该属性）</p>
+<p> input[class=”div1”]:checked{}(该属性用在表单的复选框中，表示在选中时候的复选框状态，但是颜色，宽高属性基本都设置    不起来由于属性级别默认的问题)</p>
+<p> input[class=”div1”]:focus{}（在class属性为div1的表单内，当鼠标选中时的状态）</p>
+<p> input:not([type=”submit”]){}（否定选择器：经常搭配属性选择器来使用）</p>
+</li>
+<li><h3 id="nth选择器"><a href="#nth选择器" class="headerlink" title="nth选择器"></a>nth选择器</h3><ul>
+<li><p>语法：li: first-child{}</p>
+<p>含义：选择li元素父元素的第一个li元素(第一个元素必须是li才可以)</p>
+</li>
+<li><p>语法：li: last-child{}</p>
+<p>含义：选择li元素父元素的最后一个li元素（最后一个元素也必须是li元素）</p>
+</li>
+<li><p>语法：li:nth-last-child(2) </p>
+<p>含义：li元素的父级元素的倒数第2个元素(倒数第二个元素必须是li)</p>
+</li>
+<li><p>语法：li:nth-of-type(2)</p>
+<p>含义：属于li元素父元素的第二个li元素（从头开始的第二个li即可，第二个元素不必须是li）</p>
+</li>
+<li><p>语法：li:nth-last-of-type(2)选择指定的元素，从元素的最后一个开始计算</p>
+<p>含义：属于li元素的父元素的倒数第二个li元素（倒数的第二个li即可，倒数第二个元素不必须是li）</p>
+</li>
+<li><p>语法：li: first-of-type{}</p>
+<p>含义：选择li元素父元素的第一个li元素(第一个元素不必须是li)</p>
+</li>
+<li><p>语法：li: last-of-type{}</p>
+<p>含义：选择li元素父元素的最后一个li元素(最后一个元素不必须是li)  </p>
+</li>
+<li><p>语法：li: only-child{}</p>
+<p>含义：选择li元素父元素只有一个元素且为li的li元素  </p>
+</li>
+<li><p>语法：li :only-of-type{}</p>
+<p>含义：选择li元素父元素只有一个li元素的li，同时可以有其他元素</p>
+</li>
+<li><p>语法：li:empty{}</p>
+<p>含义：选择没有任何内容的li</p>
+</li>
+<li><p>语法：li:nth-child(3)</p>
+<p>含义：表示的是li元素父级元素的第三个且为li的元素（第三个元素必须是li）</p>
+</li>
+<li><p>语法：li:nth-child(n)</p>
+<p>含义：表示的是li元素父级元素里面所有的li元素 </p>
+</li>
+<li><p>语法：li:nth-child(2n)</p>
+<p>含义：表示的是li元素的父级元素的子元素里面，第偶数个且为li标签的元素</p>
+</li>
+<li><p>语法：li:nth-child(n+3)</p>
+<p>含义：li的父级元素中的第三个元素（包括第三个）后面的所有的li元素</p>
+</li>
+<li><p>语法：li:nth-child(-n+3)</p>
+<p>含义：选择li父级标签中的第三个标签前面的所有li元素</p>
+</li>
+<li><p>语法：li:nth-child(2n+1)</p>
+<p>含义：选择li父级元素的子元素中为奇数个且为li的元素</p>
+</li>
+<li><p>语法：li:nth-child(odd)</p>
+<p>含义：选择li父级元素的子元素中为奇数个且为li的元素</p>
+</li>
+<li><p>语法：li:nth-child(even)</p>
+<p>含义：选择li父级元素的子元素中为偶数个且为li的元素</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h2><ul>
+<li><p>语法1：p::first-letter{}</p>
+<p>含义：选p标签的第一个文字，除非在同一行里面包含一些其它元素，不过这个主要运用于段落排版上多</p>
+</li>
+<li><p>语法1：p::first-line{}</p>
+<p>含义：选择p标签的第一行文本</p>
+</li>
+<li><p>语法1：div::before{},div::after{} </p>
+<p>含义：给div元素的前面或后面插入内容。这两个常用”content”配合使用，content只能写文本，见过最多的就是清除浮动还有图片icon</p>
+</li>
+<li><p>语法1：p::selection{}</p>
+<p>含义：只能设置background属性和color属性，表示的是在网页中文本中文字被选中的效果。在ie中只有ie9支持，在firefox中需要加前缀-moz</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/27/html5语义标签/" itemprop="url">
                   html5语义标签
                 </a>
@@ -1439,7 +1630,7 @@ margin-bottom: 10%;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

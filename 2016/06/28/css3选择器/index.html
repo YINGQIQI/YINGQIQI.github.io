@@ -1,0 +1,658 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="css3选择器子元素选择器：语法：div &amp;gt; h1
+含义：选择div下面一级的子元素h1，不同于后代选择器，不会选择div里面的子孙级别的h1
+相邻兄弟选择器语法：div+h1
+含义：选择div下面的、相邻的、同一级别的h1（有且只有一个符合）
+通用兄弟选择器语法：div~h1
+含义：选择div下面的、同一级别的h1（可以有多个符合）
+属性选择器
+语法1：[class]含义：选择带有clas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3选择器">
+<meta property="og:url" content="http://yoursite.com/2016/06/28/css3选择器/index.html">
+<meta property="og:site_name" content="哈七哈七玛">
+<meta property="og:description" content="css3选择器子元素选择器：语法：div &amp;gt; h1
+含义：选择div下面一级的子元素h1，不同于后代选择器，不会选择div里面的子孙级别的h1
+相邻兄弟选择器语法：div+h1
+含义：选择div下面的、相邻的、同一级别的h1（有且只有一个符合）
+通用兄弟选择器语法：div~h1
+含义：选择div下面的、同一级别的h1（可以有多个符合）
+属性选择器
+语法1：[class]含义：选择带有clas">
+<meta property="og:updated_time" content="2016-06-28T12:36:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3选择器">
+<meta name="twitter:description" content="css3选择器子元素选择器：语法：div &amp;gt; h1
+含义：选择div下面一级的子元素h1，不同于后代选择器，不会选择div里面的子孙级别的h1
+相邻兄弟选择器语法：div+h1
+含义：选择div下面的、相邻的、同一级别的h1（有且只有一个符合）
+通用兄弟选择器语法：div~h1
+含义：选择div下面的、同一级别的h1（可以有多个符合）
+属性选择器
+语法1：[class]含义：选择带有clas">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/28/css3选择器/"/>
+
+  <title> css3选择器 | 哈七哈七玛 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">哈七哈七玛</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css3选择器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-28T10:43:01+08:00" content="2016-06-28">
+              2016-06-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="css3选择器"><a href="#css3选择器" class="headerlink" title="css3选择器"></a>css3选择器</h1><h2 id="子元素选择器："><a href="#子元素选择器：" class="headerlink" title="子元素选择器："></a>子元素选择器：</h2><p>语法：div &gt; h1</p>
+<p>含义：选择div下面一级的子元素h1，不同于后代选择器，不会选择div里面的子孙级别的h1</p>
+<h2 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h2><p>语法：div+h1</p>
+<p>含义：选择div下面的、相邻的、同一级别的h1（有且只有一个符合）</p>
+<h2 id="通用兄弟选择器"><a href="#通用兄弟选择器" class="headerlink" title="通用兄弟选择器"></a>通用兄弟选择器</h2><p>语法：div~h1</p>
+<p>含义：选择div下面的、同一级别的h1（可以有多个符合）</p>
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><ul>
+<li>语法1：[class]<br>含义：选择带有class属性的标签</li>
+<li>语法2：[class=”div1”]<br>含义：选择class属性值为div1的标签</li>
+<li>语法3：[class~=”div1”]<br>含义：选择class属性有几个值的，并且用空格隔开的属性值中包含了div1的标签</li>
+<li>语法4：[class^=”div1”]<br>含义：选择class属性以div1开头的标签(div12)</li>
+<li>语法5：[class$=”div1”]<br>含义：选择class属性以div1结尾的标签</li>
+<li>语法6：[class*=”div1”]<br>含义：选择class属性包含了div1的标签(div12)</li>
+<li>语法7：[class|=“div1”]<br>含义：选择class属性以div1开头或者div1-开头的标签（div div-）</li>
+</ul>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><ul>
+<li><h3 id="a标签的伪类"><a href="#a标签的伪类" class="headerlink" title="a标签的伪类"></a>a标签的伪类</h3><p>  a:link{}（a标签在未点击前的状态）</p>
+<p>  a：hover{}（a标签在移动到上面的时候的状态）</p>
+<p>  a:action{}（a标签在点击后的状态）</p>
+</li>
+<li><h3 id="表单的伪类"><a href="#表单的伪类" class="headerlink" title="表单的伪类"></a>表单的伪类</h3><p> input[class=”div1”]:disabled{}（某个input表单元素满足class属性为div1，且满足disabled属性的效果）</p>
+<p> input[class=”div1”]：enabled{}（一般默认情况下就有该属性）</p>
+<p> input[class=”div1”]:checked{}(该属性用在表单的复选框中，表示在选中时候的复选框状态，但是颜色，宽高属性基本都设置    不起来由于属性级别默认的问题)</p>
+<p> input[class=”div1”]:focus{}（在class属性为div1的表单内，当鼠标选中时的状态）</p>
+<p> input:not([type=”submit”]){}（否定选择器：经常搭配属性选择器来使用）</p>
+</li>
+<li><h3 id="nth选择器"><a href="#nth选择器" class="headerlink" title="nth选择器"></a>nth选择器</h3><ul>
+<li><p>语法：li: first-child{}</p>
+<p>含义：选择li元素父元素的第一个li元素(第一个元素必须是li才可以)</p>
+</li>
+<li><p>语法：li: last-child{}</p>
+<p>含义：选择li元素父元素的最后一个li元素（最后一个元素也必须是li元素）</p>
+</li>
+<li><p>语法：li:nth-last-child(2) </p>
+<p>含义：li元素的父级元素的倒数第2个元素(倒数第二个元素必须是li)</p>
+</li>
+<li><p>语法：li:nth-of-type(2)</p>
+<p>含义：属于li元素父元素的第二个li元素（从头开始的第二个li即可，第二个元素不必须是li）</p>
+</li>
+<li><p>语法：li:nth-last-of-type(2)选择指定的元素，从元素的最后一个开始计算</p>
+<p>含义：属于li元素的父元素的倒数第二个li元素（倒数的第二个li即可，倒数第二个元素不必须是li）</p>
+</li>
+<li><p>语法：li: first-of-type{}</p>
+<p>含义：选择li元素父元素的第一个li元素(第一个元素不必须是li)</p>
+</li>
+<li><p>语法：li: last-of-type{}</p>
+<p>含义：选择li元素父元素的最后一个li元素(最后一个元素不必须是li)  </p>
+</li>
+<li><p>语法：li: only-child{}</p>
+<p>含义：选择li元素父元素只有一个元素且为li的li元素  </p>
+</li>
+<li><p>语法：li :only-of-type{}</p>
+<p>含义：选择li元素父元素只有一个li元素的li，同时可以有其他元素</p>
+</li>
+<li><p>语法：li:empty{}</p>
+<p>含义：选择没有任何内容的li</p>
+</li>
+<li><p>语法：li:nth-child(3)</p>
+<p>含义：表示的是li元素父级元素的第三个且为li的元素（第三个元素必须是li）</p>
+</li>
+<li><p>语法：li:nth-child(n)</p>
+<p>含义：表示的是li元素父级元素里面所有的li元素 </p>
+</li>
+<li><p>语法：li:nth-child(2n)</p>
+<p>含义：表示的是li元素的父级元素的子元素里面，第偶数个且为li标签的元素</p>
+</li>
+<li><p>语法：li:nth-child(n+3)</p>
+<p>含义：li的父级元素中的第三个元素（包括第三个）后面的所有的li元素</p>
+</li>
+<li><p>语法：li:nth-child(-n+3)</p>
+<p>含义：选择li父级标签中的第三个标签前面的所有li元素</p>
+</li>
+<li><p>语法：li:nth-child(2n+1)</p>
+<p>含义：选择li父级元素的子元素中为奇数个且为li的元素</p>
+</li>
+<li><p>语法：li:nth-child(odd)</p>
+<p>含义：选择li父级元素的子元素中为奇数个且为li的元素</p>
+</li>
+<li><p>语法：li:nth-child(even)</p>
+<p>含义：选择li父级元素的子元素中为偶数个且为li的元素</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h2><ul>
+<li><p>语法1：p::first-letter{}</p>
+<p>含义：选p标签的第一个文字，除非在同一行里面包含一些其它元素，不过这个主要运用于段落排版上多</p>
+</li>
+<li><p>语法1：p::first-line{}</p>
+<p>含义：选择p标签的第一行文本</p>
+</li>
+<li><p>语法1：div::before{},div::after{} </p>
+<p>含义：给div元素的前面或后面插入内容。这两个常用”content”配合使用，content只能写文本，见过最多的就是清除浮动还有图片icon</p>
+</li>
+<li><p>语法1：p::selection{}</p>
+<p>含义：只能设置background属性和color属性，表示的是在网页中文本中文字被选中的效果。在ie中只有ie9支持，在firefox中需要加前缀-moz</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/27/html5语义标签/" rel="next" title="html5语义标签">
+                <i class="fa fa-chevron-left"></i> html5语义标签
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css3选择器"><span class="nav-number">1.</span> <span class="nav-text">css3选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#子元素选择器："><span class="nav-number">1.1.</span> <span class="nav-text">子元素选择器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相邻兄弟选择器"><span class="nav-number">1.2.</span> <span class="nav-text">相邻兄弟选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用兄弟选择器"><span class="nav-number">1.3.</span> <span class="nav-text">通用兄弟选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性选择器"><span class="nav-number">1.4.</span> <span class="nav-text">属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪类选择器"><span class="nav-number">1.5.</span> <span class="nav-text">伪类选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a标签的伪类"><span class="nav-number">1.5.1.</span> <span class="nav-text">a标签的伪类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单的伪类"><span class="nav-number">1.5.2.</span> <span class="nav-text">表单的伪类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nth选择器"><span class="nav-number">1.5.3.</span> <span class="nav-text">nth选择器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪元素选择器"><span class="nav-number">1.6.</span> <span class="nav-text">伪元素选择器</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
