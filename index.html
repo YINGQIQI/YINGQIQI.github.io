@@ -238,6 +238,149 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/29/css3的圆角设置和背景设置/" itemprop="url">
+                  css3的圆角设置和背景设置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-29T20:36:35+08:00" content="2016-06-29">
+              2016-06-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="border设置"><a href="#border设置" class="headerlink" title="border设置"></a>border设置</h1><h2 id="圆角设置"><a href="#圆角设置" class="headerlink" title="圆角设置"></a>圆角设置</h2><ul>
+<li><p>border-radious:10px 20px 30px 40px / 50px 60px 70px 80px</p>
+</li>
+<li><p>表示的含义为：左上水平半径 右上水平半径 右下水平半径 坐下水平半径 / 左上垂直半径 右上垂直半径 右下垂直半径 左下垂直半径</p>
+</li>
+<li>这里的值可以设置为像素值也可以设置为百分比，设置百分比的含义就是盒子大小的百分比</li>
+</ul>
+<h2 id="阴影设置"><a href="#阴影设置" class="headerlink" title="阴影设置"></a>阴影设置</h2><ul>
+<li>boxshadow：2px 4px 10px yellow inset(textshadow:2px 4px 10px yellow)</li>
+<li>表示的含义为：x方面偏移2像素的阴影，y方向偏移4像素的阴影，阴影模糊度为10像素，阴影颜色为黄色，设置的为内阴影模式</li>
+<li>boxshadow是设置盒子阴影的,textshadow是设置文字阴影的。他们都可以通过设置阴影为负数改变阴影投射方向。不同的是文字阴影没有inset属性</li>
+</ul>
+<h1 id="背景设置"><a href="#背景设置" class="headerlink" title="背景设置"></a>背景设置</h1><h2 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a>background-origin</h2><ul>
+<li>该属性设置表示的是相对内容框来定位背景图像</li>
+<li>background-origin:content-box(padding-box、border-box)</li>
+<li><p>含义：</p>
+<p> 1、当属性值为content-box时表示背景图片不能遮住padding的位置（boxsizing：content-box表示width不包含    border和padding，在不设置boxsizing属性的情况下，系统默认boxsizing为content-box）<br> 2、当属性值为padding-box时表示背景图片遮住padding，不能遮住border位置（boxsizing：padding-box表示width包含padding，不包含border）在不设置background-origin的情况下，系统默认boxsizing为padding-box<br> 3、当属性值为border-box时表示背景图片遮住border（boxsizing：border-box表示width既包含padding🈶包含border）</p>
+</li>
+</ul>
+<h2 id="background-clips"><a href="#background-clips" class="headerlink" title="background-clips"></a>background-clips</h2><ul>
+<li>该属性设置表示的也是相对于内容框来定位背景图像，但不同于background-origin的是该属性值只对content-box有效果，配合padding，以内容范围裁剪</li>
+<li>对于其他两个值的设置，最终的效果都是标准盒子下的背景图片设置机制，也就是说都相当于background-origin：padding-box</li>
+</ul>
+<h2 id="background-img"><a href="#background-img" class="headerlink" title="background-img"></a>background-img</h2><h3 id="linear-gradient（线性渐变）"><a href="#linear-gradient（线性渐变）" class="headerlink" title="linear-gradient（线性渐变）"></a>linear-gradient（线性渐变）</h3><ul>
+<li>repeating-linear-gradient（to left, blue 20%,red 80% ）</li>
+<li>linear-gradient（to top left, blue 20%,red 80% ）</li>
+<li><p>linear-gradient（45deg, blue 20%,red 80% ）<br>( 默认角度为0的时候，为从下往上；所设置的角度逆时针旋转的方向）  </p>
+</li>
+<li><p>属性值解析：渐变的方向，初始颜色值，终结颜色值（颜色值后面的百分比也可以设置像素值，需要注意的是终止颜色的百分比或像素值必须大于初始颜色值后面的的值。含义表示的是开始渐变的位置）</p>
+</li>
+<li><p>可以通过设置repeating和background-size来设计重复图案的网页背景图(当background-size小于容器时，默认情况下，是不会repeat的，必须设置repeating在前面才可以)</p>
+</li>
+</ul>
+<h3 id="radical-gradient（径向渐变）"><a href="#radical-gradient（径向渐变）" class="headerlink" title="radical-gradient（径向渐变）"></a>radical-gradient（径向渐变）</h3><ul>
+<li>radical-gradient（circle，red 20% ，blue 80%）</li>
+</ul>
+<p>含义：以圆形形式从中心，红色占20%开始渐变</p>
+<ul>
+<li>radical-gradient（ellipse，red 20% ，blue 80%）</li>
+</ul>
+<p>含义：以椭圆形式从中心，红色占20%开始渐变（默认情况，一般根据局容器宽高比例自动适应）</p>
+<ul>
+<li>radical-gradient( 50px 50px at 10px 10px ,red 20% ,blue 80%)</li>
+</ul>
+<p>含义：渐变范围为高50px，宽50px。在容器的10px 10px位置处，以红色开始渐变到蓝色，红色实体色占20%</p>
+<ul>
+<li>radical-gradient(at center right,red 20%,blue 80%)</li>
+</ul>
+<p>含义：在中间右边的位置处以红色开始渐变到蓝色，其中红色实体色占父级容器的20%</p>
+<h2 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h2><p>background-size主要是设置背景图片大小的</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/29/boxsizing/" itemprop="url">
                   boxsizing
                 </a>
@@ -1043,123 +1186,6 @@ transition:all 1.5s;
             
               
                 
-                <a class="post-title-link" href="/2016/06/24/meta标签/" itemprop="url">
-                  meta标签
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-24T11:50:28+08:00" content="2016-06-24">
-              2016-06-24
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="响应式布局—meta标签"><a href="#响应式布局—meta标签" class="headerlink" title="响应式布局—meta标签"></a>响应式布局—meta标签</h1><h3 id="1、汉字申明编码"><a href="#1、汉字申明编码" class="headerlink" title="1、汉字申明编码"></a>1、汉字申明编码</h3><p>该编码是汉字申明编码。 </p>
-<pre><code>&lt;meta charset=&apos;utf-8&apos; /&gt;  
-</code></pre><h3 id="2、优先使用-IE-最新版本和-Chrome"><a href="#2、优先使用-IE-最新版本和-Chrome" class="headerlink" title="2、优先使用 IE 最新版本和 Chrome"></a>2、优先使用 IE 最新版本和 Chrome</h3><pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;  
-</code></pre><h3 id="3、浏览器内核控制"><a href="#3、浏览器内核控制" class="headerlink" title="3、浏览器内核控制"></a>3、浏览器内核控制</h3><p>目前我国国内浏览器的内核基本都是双内核（webkit和trident）</p>
-<pre><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;&gt; 
-</code></pre><h3 id="4、页面关键字"><a href="#4、页面关键字" class="headerlink" title="4、页面关键字"></a>4、页面关键字</h3><p>“your tags”最好不要超过12个，页面关键字十分重要，可被搜索引擎的爬虫程序收录，用于用户搜索</p>
-<pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;your tags，” /&gt;
-</code></pre><h3 id="5、页面描述"><a href="#5、页面描述" class="headerlink" title="5、页面描述"></a>5、页面描述</h3><p>页面描述尽量不要超过120个字（包括标点符号），同样会被搜索引擎的爬虫程序收录检测，用于用户搜索</p>
-<pre><code>&lt;meta name=“description&quot;content=&quot;120｜ 150 words&quot; /&gt;
-</code></pre><h3 id="6、搜索引擎索引方式"><a href="#6、搜索引擎索引方式" class="headerlink" title="6、搜索引擎索引方式"></a>6、搜索引擎索引方式</h3><p>搜索引擎的引入方式的content值有六种：all none、index、follow、noindex、nofollow<br>这六个值的含义是：</p>
-<p>all：文件将被检索，且页面上的链接可以被查询；</p>
-<p>none：文件将不被检索，且页面上的链接不可以被查询；</p>
-<p>index：文件将被检索；</p>
-<p>follow：页面上的链接可以被查询；</p>
-<p>noindex：文件将不被检索；</p>
-<p>nofollow：页面上的链接不可以被查询。</p>
-<pre><code>&lt;meta name=“robots” content=&quot;index,follow&quot; /&gt; 
-</code></pre><h3 id="7、页面重定向和刷新"><a href="#7、页面重定向和刷新" class="headerlink" title="7、页面重定向和刷新"></a>7、页面重定向和刷新</h3><p>content内的数字代表时间（秒），既多少时间后刷新，如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚）</p>
-<pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&quot; /&gt;
-</code></pre><h3 id="8、网页作者信息"><a href="#8、网页作者信息" class="headerlink" title="8、网页作者信息"></a>8、网页作者信息</h3><pre><code>&lt;meta name=&quot;author&quot; content=&quot;author name&quot; /&gt;
-</code></pre><h2 id="在线制作icon"><a href="#在线制作icon" class="headerlink" title="在线制作icon"></a>在线制作icon</h2><h2 id="浏览器兼容效果"><a href="#浏览器兼容效果" class="headerlink" title="浏览器兼容效果"></a>浏览器兼容效果</h2><p>Firefox: -moz-box-shadow</p>
-<p>Safari: -webkit-box-shadow</p>
-<p>Opera: -o-box-shadow</p>
-<p>IE: -ms-box-shadow</p>
-<h2 id="更换自己博客的icon？？？"><a href="#更换自己博客的icon？？？" class="headerlink" title="更换自己博客的icon？？？"></a>更换自己博客的icon？？？</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/06/24/css3单位/" itemprop="url">
                   css3单位
                 </a>
@@ -1317,6 +1343,123 @@ margin-bottom: 10%;
 <li>效果图如图：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei6.jpg" alt="danwei"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei7.jpg" alt="danwei"></li>
 </ul>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/24/meta标签/" itemprop="url">
+                  meta标签
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-24T11:50:28+08:00" content="2016-06-24">
+              2016-06-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="响应式布局—meta标签"><a href="#响应式布局—meta标签" class="headerlink" title="响应式布局—meta标签"></a>响应式布局—meta标签</h1><h3 id="1、汉字申明编码"><a href="#1、汉字申明编码" class="headerlink" title="1、汉字申明编码"></a>1、汉字申明编码</h3><p>该编码是汉字申明编码。 </p>
+<pre><code>&lt;meta charset=&apos;utf-8&apos; /&gt;  
+</code></pre><h3 id="2、优先使用-IE-最新版本和-Chrome"><a href="#2、优先使用-IE-最新版本和-Chrome" class="headerlink" title="2、优先使用 IE 最新版本和 Chrome"></a>2、优先使用 IE 最新版本和 Chrome</h3><pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;  
+</code></pre><h3 id="3、浏览器内核控制"><a href="#3、浏览器内核控制" class="headerlink" title="3、浏览器内核控制"></a>3、浏览器内核控制</h3><p>目前我国国内浏览器的内核基本都是双内核（webkit和trident）</p>
+<pre><code>&lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;&gt; 
+</code></pre><h3 id="4、页面关键字"><a href="#4、页面关键字" class="headerlink" title="4、页面关键字"></a>4、页面关键字</h3><p>“your tags”最好不要超过12个，页面关键字十分重要，可被搜索引擎的爬虫程序收录，用于用户搜索</p>
+<pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;your tags，” /&gt;
+</code></pre><h3 id="5、页面描述"><a href="#5、页面描述" class="headerlink" title="5、页面描述"></a>5、页面描述</h3><p>页面描述尽量不要超过120个字（包括标点符号），同样会被搜索引擎的爬虫程序收录检测，用于用户搜索</p>
+<pre><code>&lt;meta name=“description&quot;content=&quot;120｜ 150 words&quot; /&gt;
+</code></pre><h3 id="6、搜索引擎索引方式"><a href="#6、搜索引擎索引方式" class="headerlink" title="6、搜索引擎索引方式"></a>6、搜索引擎索引方式</h3><p>搜索引擎的引入方式的content值有六种：all none、index、follow、noindex、nofollow<br>这六个值的含义是：</p>
+<p>all：文件将被检索，且页面上的链接可以被查询；</p>
+<p>none：文件将不被检索，且页面上的链接不可以被查询；</p>
+<p>index：文件将被检索；</p>
+<p>follow：页面上的链接可以被查询；</p>
+<p>noindex：文件将不被检索；</p>
+<p>nofollow：页面上的链接不可以被查询。</p>
+<pre><code>&lt;meta name=“robots” content=&quot;index,follow&quot; /&gt; 
+</code></pre><h3 id="7、页面重定向和刷新"><a href="#7、页面重定向和刷新" class="headerlink" title="7、页面重定向和刷新"></a>7、页面重定向和刷新</h3><p>content内的数字代表时间（秒），既多少时间后刷新，如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚）</p>
+<pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&quot; /&gt;
+</code></pre><h3 id="8、网页作者信息"><a href="#8、网页作者信息" class="headerlink" title="8、网页作者信息"></a>8、网页作者信息</h3><pre><code>&lt;meta name=&quot;author&quot; content=&quot;author name&quot; /&gt;
+</code></pre><h2 id="在线制作icon"><a href="#在线制作icon" class="headerlink" title="在线制作icon"></a>在线制作icon</h2><h2 id="浏览器兼容效果"><a href="#浏览器兼容效果" class="headerlink" title="浏览器兼容效果"></a>浏览器兼容效果</h2><p>Firefox: -moz-box-shadow</p>
+<p>Safari: -webkit-box-shadow</p>
+<p>Opera: -o-box-shadow</p>
+<p>IE: -ms-box-shadow</p>
+<h2 id="更换自己博客的icon？？？"><a href="#更换自己博客的icon？？？" class="headerlink" title="更换自己博客的icon？？？"></a>更换自己博客的icon？？？</h2>
           
         
       
@@ -1589,111 +1732,13 @@ margin-bottom: 10%;
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/22/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-22T11:41:53+08:00" content="2016-06-22">
-              2016-06-22
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1732,7 +1777,7 @@ margin-bottom: 10%;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

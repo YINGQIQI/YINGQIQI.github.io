@@ -1,0 +1,613 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="border设置圆角设置
+border-radious:10px 20px 30px 40px / 50px 60px 70px 80px
+
+表示的含义为：左上水平半径 右上水平半径 右下水平半径 坐下水平半径 / 左上垂直半径 右上垂直半径 右下垂直半径 左下垂直半径
+
+这里的值可以设置为像素值也可以设置为百分比，设置百分比的含义就是盒子大小的百分比
+
+阴影设置
+boxshadow：2px 4p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3的圆角设置和背景设置">
+<meta property="og:url" content="http://yoursite.com/2016/06/29/css3的圆角设置和背景设置/index.html">
+<meta property="og:site_name" content="哈七哈七玛">
+<meta property="og:description" content="border设置圆角设置
+border-radious:10px 20px 30px 40px / 50px 60px 70px 80px
+
+表示的含义为：左上水平半径 右上水平半径 右下水平半径 坐下水平半径 / 左上垂直半径 右上垂直半径 右下垂直半径 左下垂直半径
+
+这里的值可以设置为像素值也可以设置为百分比，设置百分比的含义就是盒子大小的百分比
+
+阴影设置
+boxshadow：2px 4p">
+<meta property="og:updated_time" content="2016-06-29T14:37:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3的圆角设置和背景设置">
+<meta name="twitter:description" content="border设置圆角设置
+border-radious:10px 20px 30px 40px / 50px 60px 70px 80px
+
+表示的含义为：左上水平半径 右上水平半径 右下水平半径 坐下水平半径 / 左上垂直半径 右上垂直半径 右下垂直半径 左下垂直半径
+
+这里的值可以设置为像素值也可以设置为百分比，设置百分比的含义就是盒子大小的百分比
+
+阴影设置
+boxshadow：2px 4p">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/29/css3的圆角设置和背景设置/"/>
+
+  <title> css3的圆角设置和背景设置 | 哈七哈七玛 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">哈七哈七玛</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css3的圆角设置和背景设置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-29T20:36:35+08:00" content="2016-06-29">
+              2016-06-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="border设置"><a href="#border设置" class="headerlink" title="border设置"></a>border设置</h1><h2 id="圆角设置"><a href="#圆角设置" class="headerlink" title="圆角设置"></a>圆角设置</h2><ul>
+<li><p>border-radious:10px 20px 30px 40px / 50px 60px 70px 80px</p>
+</li>
+<li><p>表示的含义为：左上水平半径 右上水平半径 右下水平半径 坐下水平半径 / 左上垂直半径 右上垂直半径 右下垂直半径 左下垂直半径</p>
+</li>
+<li>这里的值可以设置为像素值也可以设置为百分比，设置百分比的含义就是盒子大小的百分比</li>
+</ul>
+<h2 id="阴影设置"><a href="#阴影设置" class="headerlink" title="阴影设置"></a>阴影设置</h2><ul>
+<li>boxshadow：2px 4px 10px yellow inset(textshadow:2px 4px 10px yellow)</li>
+<li>表示的含义为：x方面偏移2像素的阴影，y方向偏移4像素的阴影，阴影模糊度为10像素，阴影颜色为黄色，设置的为内阴影模式</li>
+<li>boxshadow是设置盒子阴影的,textshadow是设置文字阴影的。他们都可以通过设置阴影为负数改变阴影投射方向。不同的是文字阴影没有inset属性</li>
+</ul>
+<h1 id="背景设置"><a href="#背景设置" class="headerlink" title="背景设置"></a>背景设置</h1><h2 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a>background-origin</h2><ul>
+<li>该属性设置表示的是相对内容框来定位背景图像</li>
+<li>background-origin:content-box(padding-box、border-box)</li>
+<li><p>含义：</p>
+<p> 1、当属性值为content-box时表示背景图片不能遮住padding的位置（boxsizing：content-box表示width不包含    border和padding，在不设置boxsizing属性的情况下，系统默认boxsizing为content-box）<br> 2、当属性值为padding-box时表示背景图片遮住padding，不能遮住border位置（boxsizing：padding-box表示width包含padding，不包含border）在不设置background-origin的情况下，系统默认boxsizing为padding-box<br> 3、当属性值为border-box时表示背景图片遮住border（boxsizing：border-box表示width既包含padding🈶包含border）</p>
+</li>
+</ul>
+<h2 id="background-clips"><a href="#background-clips" class="headerlink" title="background-clips"></a>background-clips</h2><ul>
+<li>该属性设置表示的也是相对于内容框来定位背景图像，但不同于background-origin的是该属性值只对content-box有效果，配合padding，以内容范围裁剪</li>
+<li>对于其他两个值的设置，最终的效果都是标准盒子下的背景图片设置机制，也就是说都相当于background-origin：padding-box</li>
+</ul>
+<h2 id="background-img"><a href="#background-img" class="headerlink" title="background-img"></a>background-img</h2><h3 id="linear-gradient（线性渐变）"><a href="#linear-gradient（线性渐变）" class="headerlink" title="linear-gradient（线性渐变）"></a>linear-gradient（线性渐变）</h3><ul>
+<li>repeating-linear-gradient（to left, blue 20%,red 80% ）</li>
+<li>linear-gradient（to top left, blue 20%,red 80% ）</li>
+<li><p>linear-gradient（45deg, blue 20%,red 80% ）<br>( 默认角度为0的时候，为从下往上；所设置的角度逆时针旋转的方向）  </p>
+</li>
+<li><p>属性值解析：渐变的方向，初始颜色值，终结颜色值（颜色值后面的百分比也可以设置像素值，需要注意的是终止颜色的百分比或像素值必须大于初始颜色值后面的的值。含义表示的是开始渐变的位置）</p>
+</li>
+<li><p>可以通过设置repeating和background-size来设计重复图案的网页背景图(当background-size小于容器时，默认情况下，是不会repeat的，必须设置repeating在前面才可以)</p>
+</li>
+</ul>
+<h3 id="radical-gradient（径向渐变）"><a href="#radical-gradient（径向渐变）" class="headerlink" title="radical-gradient（径向渐变）"></a>radical-gradient（径向渐变）</h3><ul>
+<li>radical-gradient（circle，red 20% ，blue 80%）</li>
+</ul>
+<p>含义：以圆形形式从中心，红色占20%开始渐变</p>
+<ul>
+<li>radical-gradient（ellipse，red 20% ，blue 80%）</li>
+</ul>
+<p>含义：以椭圆形式从中心，红色占20%开始渐变（默认情况，一般根据局容器宽高比例自动适应）</p>
+<ul>
+<li>radical-gradient( 50px 50px at 10px 10px ,red 20% ,blue 80%)</li>
+</ul>
+<p>含义：渐变范围为高50px，宽50px。在容器的10px 10px位置处，以红色开始渐变到蓝色，红色实体色占20%</p>
+<ul>
+<li>radical-gradient(at center right,red 20%,blue 80%)</li>
+</ul>
+<p>含义：在中间右边的位置处以红色开始渐变到蓝色，其中红色实体色占父级容器的20%</p>
+<h2 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h2><p>background-size主要是设置背景图片大小的</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/29/boxsizing/" rel="next" title="boxsizing">
+                <i class="fa fa-chevron-left"></i> boxsizing
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#border设置"><span class="nav-number">1.</span> <span class="nav-text">border设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#圆角设置"><span class="nav-number">1.1.</span> <span class="nav-text">圆角设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影设置"><span class="nav-number">1.2.</span> <span class="nav-text">阴影设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景设置"><span class="nav-number">2.</span> <span class="nav-text">背景设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#background-origin"><span class="nav-number">2.1.</span> <span class="nav-text">background-origin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#background-clips"><span class="nav-number">2.2.</span> <span class="nav-text">background-clips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#background-img"><span class="nav-number">2.3.</span> <span class="nav-text">background-img</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-gradient（线性渐变）"><span class="nav-number">2.3.1.</span> <span class="nav-text">linear-gradient（线性渐变）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#radical-gradient（径向渐变）"><span class="nav-number">2.3.2.</span> <span class="nav-text">radical-gradient（径向渐变）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#background-size"><span class="nav-number">2.4.</span> <span class="nav-text">background-size</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
