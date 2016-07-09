@@ -175,7 +175,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -238,6 +238,157 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/22/FirstDay/" itemprop="url">
+                  博客搭建步骤
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-22T16:00:37+08:00" content="2016-06-22">
+              2016-06-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Hexo-博客搭建步骤"><a href="#Hexo-博客搭建步骤" class="headerlink" title="Hexo 博客搭建步骤"></a>Hexo 博客搭建步骤</h1><h2 id="安装nodeJS："><a href="#安装nodeJS：" class="headerlink" title="安装nodeJS："></a>安装nodeJS：</h2><ul>
+<li>进入nodeJS官网下载nodeJS  (官网地址：<a href="https://nodejs.org/en" target="_blank" rel="external">https://nodejs.org/en</a>)</li>
+<li>安装成功后在终端进行测试：输入node -v，回车查看，如下图所示则安装成功<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture1.jpg" alt="picture1"></li>
+</ul>
+<h2 id="安装hexo："><a href="#安装hexo：" class="headerlink" title="安装hexo："></a>安装hexo：</h2><ul>
+<li>在终端输入npm install hexo -g,然后回车</li>
+<li>若此时终端出现root Administrator等错误时，需重新输入sudo npm install hero -g，以管理员方式安装，回车。</li>
+<li>输入管理员密码，回车</li>
+<li>测试hexo是否安装成功：在终端输入hexo，回车查看，如在终端出现如下图所示的代码，则安装成功。<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture12.jpg" alt="picture1"></li>
+</ul>
+<h2 id="创建目录并进入-以桌面创建为例"><a href="#创建目录并进入-以桌面创建为例" class="headerlink" title="创建目录并进入(以桌面创建为例):"></a>创建目录并进入(以桌面创建为例):</h2><ul>
+<li>在终端输入“cd Desktop”,回车,进入电脑桌面</li>
+<li>在终端输入“mkdir blog”，回车，在桌面创建一个名为blog的文件夹</li>
+<li>在终端输入“cd blog”,回车，进入名为blog的文件夹</li>
+<li>在终端输入“hexo init”，回车，初始化hexo的目录</li>
+<li>在终端输入“hexo server”回车，启动本地服务，在成功启动本地服务器后会出现一个本地博客地址：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>,点击进入。(按住ctrl+c退出hexo运行)，如下图所示：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture2.jpg" alt="picture2"></li>
+<li>在进入hexo博客的网站后注册一个账号并登陆，步骤如下图所示：</li>
+</ul>
+<p>1、进入注册界面，点击右上角的“sign in”<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture3.jpg" alt="picture3"><br>2、填写用户名、注册邮箱和密码<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture4.jpg" alt="picture3"></p>
+<h2 id="注册github账号："><a href="#注册github账号：" class="headerlink" title="注册github账号："></a>注册github账号：</h2><ul>
+<li><p>首先需要配置ssh-key的值：在终端输入“ssh-keygen”，连续回车三次,如下图所示:<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture5.jpg" alt="picture3"></p>
+</li>
+<li><p>在终端输入“vim ~/.ssh/id_rsa.pub”复制ssh-key的值。</p>
+</li>
+<li><p>打开本地博客地址，点击用户名旁边的settings，点击personal settings 里面的SSH and GPG keys，在key的输入框内把之前复制的ssh-key的值输入进去，点击ADD SSH key确认。这样一个博客账号就创建好了。</p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture6.jpg" alt="picture3"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture7.jpg" alt="picture3"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture8.jpg" alt="picture3"></p>
+</li>
+<li><p>在终端输入“：q”，回车，进入博客文件。</p>
+</li>
+<li>下面将配置github与本地机器验证：<br>在终端输入“git config –global user.name”用户名”（例如：git config –global user.name”YINGQIQI”）<br>在终端输入“git config –global user.email”邮箱地址”（例如：git config –global user.email”2544360251@qq.com”）<br> <img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture9.jpg" alt="picture3"></li>
+<li>新建博客域名仓库：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture10.jpg" alt="picture3"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture11.jpg" alt="picture3"><br>[注意：]repositary的名字必须和用户名一致</li>
+</ul>
+<h2 id="配置config-yml："><a href="#配置config-yml：" class="headerlink" title="配置config.yml："></a>配置config.yml：</h2><p><em>打开桌面上的blog文件夹中的config.yml文件
+</em>在deploy字段的下面的type后面填入“ git”；进入自己本地博客地址把域名仓库的 https的域名地址复制到deploy字段下面的repo后面<br>  <img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture13.jpg" alt="picture3"><br>  <img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture14.jpg" alt="picture3"></p>
+<h2 id="发布："><a href="#发布：" class="headerlink" title="发布："></a>发布：</h2><ul>
+<li>在终端输入“cd Desktop”，回车,然后输入“cd blog”，回车，进入blog文件夹中</li>
+<li>在终端输入：“npm install hexo-deployer-git –save”</li>
+<li><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture17.jpg" alt="picture3"></li>
+<li>在终端输入：“hexo g”，回车，把一些文件转换成css和html文件</li>
+<li><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture15.jpg" alt="picture3"></li>
+<li>在终端输入：“hexo d”，回车，把生成的网页发布到仓库。</li>
+<li><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture16.jpg" alt="picture3"></li>
+<li>打开博客地址查看效果</li>
+</ul>
+<h1 id="博客使用："><a href="#博客使用：" class="headerlink" title="博客使用："></a>博客使用：</h1><h2 id="进入博客"><a href="#进入博客" class="headerlink" title="进入博客"></a>进入博客</h2><p>新建博客的网址为：<a href="https://**用户名**.github.io/" target="_blank" rel="external">https://**用户名**.github.io/</a></p>
+<h2 id="更换博客主题"><a href="#更换博客主题" class="headerlink" title="更换博客主题"></a>更换博客主题</h2><ul>
+<li>可以在网上下载一些hexo博客的主题，clone主题的https地址<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture18.jpg" alt="picture3"></li>
+<li>在终端进入blog里面的themes文件夹中，回车，然后输入“git clone 主题http地址”回车（此过程需要一段时间），例如下图所示：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture19.jpg" alt="picture3"></li>
+<li>此时打开blog文件夹的themes中可以发现多出一个主题文件夹</li>
+<li>在blog文件夹的_config.yml文件中修改主题并保存<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture20.jpg" alt="picture3"><h2 id="更换博客名称"><a href="#更换博客名称" class="headerlink" title="更换博客名称"></a>更换博客名称</h2></li>
+<li>在_config.yml文件中可以修改主题和博客题目以及作者语言等，在修改完后需保存并重新在终端运行<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture21.jpg" alt="picture3"></li>
+</ul>
+<h2 id="更新博客"><a href="#更新博客" class="headerlink" title="更新博客"></a>更新博客</h2><ul>
+<li>在终端输入“hexo new”,创建新日志</li>
+<li>在终端输入“hexo server”，在本地服务器查看博客内容是否有问题</li>
+<li>在终端输入“hexo g”把md文件转化成html文件和css文件</li>
+<li>在终端输入“hexo d”把本地写的博客发布到仓库</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/22/zhangying/" itemprop="url">
                   zhangying
                 </a>
@@ -251,7 +402,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-22T11:48:09+08:00" content="2016-06-22">
               2016-06-22
             </time>
@@ -345,7 +496,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-22T11:41:53+08:00" content="2016-06-22">
               2016-06-22
             </time>
@@ -458,8 +609,8 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -506,7 +657,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

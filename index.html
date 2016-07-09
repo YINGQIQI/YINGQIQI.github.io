@@ -175,7 +175,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -238,6 +238,142 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/05/0705less&媒体查询/" itemprop="url">
+                  css3的less框架和媒体查询
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-07-05T11:48:15+08:00" content="2016-07-05">
+              2016-07-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="less文件"><a href="#less文件" class="headerlink" title="less文件"></a>less文件</h1><h3 id="参考网址：http-www-bootcss-com-p-lesscss"><a href="#参考网址：http-www-bootcss-com-p-lesscss" class="headerlink" title="参考网址：http://www.bootcss.com/p/lesscss/"></a>参考网址：<a href="http://www.bootcss.com/p/lesscss/" target="_blank" rel="external">http://www.bootcss.com/p/lesscss/</a></h3><h4 id="变量能够直接当做属性值使用"><a href="#变量能够直接当做属性值使用" class="headerlink" title="变量能够直接当做属性值使用"></a>变量能够直接当做属性值使用</h4><pre><code>@color：green；
+#header{
+color：@color;
+}
+</code></pre><h4 id="变量也能够在复合属性中使用"><a href="#变量也能够在复合属性中使用" class="headerlink" title="变量也能够在复合属性中使用"></a>变量也能够在复合属性中使用</h4><pre><code>@color：green；
+#header{
+border:10px @color solid;
+}
+</code></pre><h4 id="变量无参数的混用"><a href="#变量无参数的混用" class="headerlink" title="变量无参数的混用"></a>变量无参数的混用</h4><pre><code>@color:green;
+.classA{
+background:@color;
+}
+#header{
+.classA;
+}
+</code></pre><h4 id="变量有参数的混用"><a href="#变量有参数的混用" class="headerlink" title="变量有参数的混用"></a>变量有参数的混用</h4><pre><code>.wrap{
+    .trs(all;3s;ease;0s);
+}
+.trs(@property;@duration;@timing-function;@delay){
+    transition:@property @duration @timing-function @delay;
+}
+</code></pre><h4 id="嵌套规则"><a href="#嵌套规则" class="headerlink" title="嵌套规则"></a>嵌套规则</h4><pre><code>#header {
+    h1 {
+    font-size: 26px;
+    font-weight: bold;
+    }
+    p { font-size: 12px;
+        a { text-decoration: none;
+       &amp;:hover { border-width: 1px }
+      }
+    }
+ }
+</code></pre><h4 id="函数和运算"><a href="#函数和运算" class="headerlink" title="函数和运算"></a>函数和运算</h4><p>我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。</p>
+<pre><code>@the-border: 1px;
+@base-color: #111;
+@red:  #842210;
+#header {
+color: @base-color * 3;
+border-left: @the-border;
+border-right: @the-border * 2;
+}
+</code></pre><h1 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h1><h4 id="方式一：在link标签里面写"><a href="#方式一：在link标签里面写" class="headerlink" title="方式一：在link标签里面写"></a>方式一：在link标签里面写</h4><pre><code>&lt;link rel=&quot;stylesheet&quot; media=&quot;only screen and (min-width:750px)&quot; href=&quot;css/        c.css&quot; /&gt;
+</code></pre><h4 id="方式二：在css里面写或者在style样式里面写"><a href="#方式二：在css里面写或者在style样式里面写" class="headerlink" title="方式二：在css里面写或者在style样式里面写"></a>方式二：在css里面写或者在style样式里面写</h4><pre><code>@media only screen and (min-width: ) {}
+</code></pre><h1 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h1><h3 id="参考网址：http-v3-bootcss-com"><a href="#参考网址：http-v3-bootcss-com" class="headerlink" title="参考网址：http://v3.bootcss.com/"></a>参考网址：<a href="http://v3.bootcss.com/" target="_blank" rel="external">http://v3.bootcss.com/</a></h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/30/动画/" itemprop="url">
                   动画
                 </a>
@@ -251,7 +387,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-30T18:45:54+08:00" content="2016-06-30">
               2016-06-30
             </time>
@@ -282,8 +418,8 @@
       
         
           
-            <p>【补】：伪元素没有hover效果</p>
-<h1 id="transition（过渡）属性"><a href="#transition（过渡）属性" class="headerlink" title="transition（过渡）属性"></a>transition（过渡）属性</h1><h2 id="transition-property："><a href="#transition-property：" class="headerlink" title="transition-property："></a>transition-property：</h2><ul>
+            <p>【补】：伪元素没有hover效果<br>【补】：position：relative可以设置margin：0 auto，而position：absolute不可以<br>【补】：background的简写：background：red url x y repeat</p>
+<h1 id="注意-：无论2D或者还是3D，当旋转后，x，y，z的坐标轴也跟着旋转！！！"><a href="#注意-：无论2D或者还是3D，当旋转后，x，y，z的坐标轴也跟着旋转！！！" class="headerlink" title="[注意]：无论2D或者还是3D，当旋转后，x，y，z的坐标轴也跟着旋转！！！"></a>[注意]：无论2D或者还是3D，当旋转后，x，y，z的坐标轴也跟着旋转！！！</h1><h1 id="transition（过渡）属性"><a href="#transition（过渡）属性" class="headerlink" title="transition（过渡）属性"></a>transition（过渡）属性</h1><h2 id="transition-property："><a href="#transition-property：" class="headerlink" title="transition-property："></a>transition-property：</h2><ul>
 <li>执行过渡变换的属性（width；height；left；right；opacity；边框的宽度支持，边框类型不支持；font-size；    color。。。。。。）</li>
 </ul>
 <h2 id="transition-duration："><a href="#transition-duration：" class="headerlink" title="transition-duration："></a>transition-duration：</h2><ul>
@@ -432,7 +568,7 @@ to{width: 1000px;}
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-29T20:36:35+08:00" content="2016-06-29">
               2016-06-29
             </time>
@@ -575,7 +711,7 @@ to{width: 1000px;}
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-29T20:14:51+08:00" content="2016-06-29">
               2016-06-29
             </time>
@@ -615,6 +751,15 @@ to{width: 1000px;}
 <h2 id="boxsizing-padding-box"><a href="#boxsizing-padding-box" class="headerlink" title="boxsizing:padding-box"></a>boxsizing:padding-box</h2><ul>
 <li>padding计算入width内</li>
 </ul>
+<h1 id="resize标签"><a href="#resize标签" class="headerlink" title="resize标签"></a>resize标签</h1><ul>
+<li>resize：none;//不能更改盒子宽高</li>
+<li>resize:both;//可以更改盒子宽高</li>
+<li>resize:vertical;//可以更改盒子高</li>
+<li>resize:horizonal;//可以改变盒子宽</li>
+</ul>
+<p>#css3字体设置<br>    @font-face ：{<br>    font-family:&lt;你的web字体名称&gt;;<br>    src:url(“字体路径”);<br>    font-weight:bold;<br>    }<br>    div<br>    {<br>    font-family:你的web字体名称;<br>    }</p>
+<p>#多列布局</p>
+<p>#弹性布局</p>
 
           
         
@@ -677,7 +822,7 @@ to{width: 1000px;}
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-28T10:43:01+08:00" content="2016-06-28">
               2016-06-28
             </time>
@@ -868,7 +1013,7 @@ to{width: 1000px;}
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-27T16:46:57+08:00" content="2016-06-27">
               2016-06-27
             </time>
@@ -1178,7 +1323,7 @@ display: block;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-27T14:51:42+08:00" content="2016-06-27">
               2016-06-27
             </time>
@@ -1282,7 +1427,7 @@ display: block;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-25T20:24:43+08:00" content="2016-06-25">
               2016-06-25
             </time>
@@ -1380,7 +1525,7 @@ transition:all 1.5s;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-24T11:50:28+08:00" content="2016-06-24">
               2016-06-24
             </time>
@@ -1585,7 +1730,7 @@ margin-bottom: 10%;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-24T11:50:28+08:00" content="2016-06-24">
               2016-06-24
             </time>
@@ -1668,157 +1813,6 @@ margin-bottom: 10%;
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/22/FirstDay/" itemprop="url">
-                  博客搭建步骤
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-22T16:00:37+08:00" content="2016-06-22">
-              2016-06-22
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hexo-博客搭建步骤"><a href="#Hexo-博客搭建步骤" class="headerlink" title="Hexo 博客搭建步骤"></a>Hexo 博客搭建步骤</h1><h2 id="安装nodeJS："><a href="#安装nodeJS：" class="headerlink" title="安装nodeJS："></a>安装nodeJS：</h2><ul>
-<li>进入nodeJS官网下载nodeJS  (官网地址：<a href="https://nodejs.org/en" target="_blank" rel="external">https://nodejs.org/en</a>)</li>
-<li>安装成功后在终端进行测试：输入node -v，回车查看，如下图所示则安装成功<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture1.jpg" alt="picture1"></li>
-</ul>
-<h2 id="安装hexo："><a href="#安装hexo：" class="headerlink" title="安装hexo："></a>安装hexo：</h2><ul>
-<li>在终端输入npm install hexo -g,然后回车</li>
-<li>若此时终端出现root Administrator等错误时，需重新输入sudo npm install hero -g，以管理员方式安装，回车。</li>
-<li>输入管理员密码，回车</li>
-<li>测试hexo是否安装成功：在终端输入hexo，回车查看，如在终端出现如下图所示的代码，则安装成功。<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture12.jpg" alt="picture1"></li>
-</ul>
-<h2 id="创建目录并进入-以桌面创建为例"><a href="#创建目录并进入-以桌面创建为例" class="headerlink" title="创建目录并进入(以桌面创建为例):"></a>创建目录并进入(以桌面创建为例):</h2><ul>
-<li>在终端输入“cd Desktop”,回车,进入电脑桌面</li>
-<li>在终端输入“mkdir blog”，回车，在桌面创建一个名为blog的文件夹</li>
-<li>在终端输入“cd blog”,回车，进入名为blog的文件夹</li>
-<li>在终端输入“hexo init”，回车，初始化hexo的目录</li>
-<li>在终端输入“hexo server”回车，启动本地服务，在成功启动本地服务器后会出现一个本地博客地址：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>,点击进入。(按住ctrl+c退出hexo运行)，如下图所示：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture2.jpg" alt="picture2"></li>
-<li>在进入hexo博客的网站后注册一个账号并登陆，步骤如下图所示：</li>
-</ul>
-<p>1、进入注册界面，点击右上角的“sign in”<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture3.jpg" alt="picture3"><br>2、填写用户名、注册邮箱和密码<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture4.jpg" alt="picture3"></p>
-<h2 id="注册github账号："><a href="#注册github账号：" class="headerlink" title="注册github账号："></a>注册github账号：</h2><ul>
-<li><p>首先需要配置ssh-key的值：在终端输入“ssh-keygen”，连续回车三次,如下图所示:<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture5.jpg" alt="picture3"></p>
-</li>
-<li><p>在终端输入“vim ~/.ssh/id_rsa.pub”复制ssh-key的值。</p>
-</li>
-<li><p>打开本地博客地址，点击用户名旁边的settings，点击personal settings 里面的SSH and GPG keys，在key的输入框内把之前复制的ssh-key的值输入进去，点击ADD SSH key确认。这样一个博客账号就创建好了。</p>
-<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture6.jpg" alt="picture3"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture7.jpg" alt="picture3"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture8.jpg" alt="picture3"></p>
-</li>
-<li><p>在终端输入“：q”，回车，进入博客文件。</p>
-</li>
-<li>下面将配置github与本地机器验证：<br>在终端输入“git config –global user.name”用户名”（例如：git config –global user.name”YINGQIQI”）<br>在终端输入“git config –global user.email”邮箱地址”（例如：git config –global user.email”2544360251@qq.com”）<br> <img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture9.jpg" alt="picture3"></li>
-<li>新建博客域名仓库：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture10.jpg" alt="picture3"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture11.jpg" alt="picture3"><br>[注意：]repositary的名字必须和用户名一致</li>
-</ul>
-<h2 id="配置config-yml："><a href="#配置config-yml：" class="headerlink" title="配置config.yml："></a>配置config.yml：</h2><p><em>打开桌面上的blog文件夹中的config.yml文件
-</em>在deploy字段的下面的type后面填入“ git”；进入自己本地博客地址把域名仓库的 https的域名地址复制到deploy字段下面的repo后面<br>  <img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture13.jpg" alt="picture3"><br>  <img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture14.jpg" alt="picture3"></p>
-<h2 id="发布："><a href="#发布：" class="headerlink" title="发布："></a>发布：</h2><ul>
-<li>在终端输入“cd Desktop”，回车,然后输入“cd blog”，回车，进入blog文件夹中</li>
-<li>在终端输入：“npm install hexo-deployer-git –save”</li>
-<li><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture17.jpg" alt="picture3"></li>
-<li>在终端输入：“hexo g”，回车，把一些文件转换成css和html文件</li>
-<li><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture15.jpg" alt="picture3"></li>
-<li>在终端输入：“hexo d”，回车，把生成的网页发布到仓库。</li>
-<li><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture16.jpg" alt="picture3"></li>
-<li>打开博客地址查看效果</li>
-</ul>
-<h1 id="博客使用："><a href="#博客使用：" class="headerlink" title="博客使用："></a>博客使用：</h1><h2 id="进入博客"><a href="#进入博客" class="headerlink" title="进入博客"></a>进入博客</h2><p>新建博客的网址为：<a href="https://**用户名**.github.io/" target="_blank" rel="external">https://**用户名**.github.io/</a></p>
-<h2 id="更换博客主题"><a href="#更换博客主题" class="headerlink" title="更换博客主题"></a>更换博客主题</h2><ul>
-<li>可以在网上下载一些hexo博客的主题，clone主题的https地址<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture18.jpg" alt="picture3"></li>
-<li>在终端进入blog里面的themes文件夹中，回车，然后输入“git clone 主题http地址”回车（此过程需要一段时间），例如下图所示：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture19.jpg" alt="picture3"></li>
-<li>此时打开blog文件夹的themes中可以发现多出一个主题文件夹</li>
-<li>在blog文件夹的_config.yml文件中修改主题并保存<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture20.jpg" alt="picture3"><h2 id="更换博客名称"><a href="#更换博客名称" class="headerlink" title="更换博客名称"></a>更换博客名称</h2></li>
-<li>在_config.yml文件中可以修改主题和博客题目以及作者语言等，在修改完后需保存并重新在终端运行<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/picture21.jpg" alt="picture3"></li>
-</ul>
-<h2 id="更新博客"><a href="#更新博客" class="headerlink" title="更新博客"></a>更新博客</h2><ul>
-<li>在终端输入“hexo new”,创建新日志</li>
-<li>在终端输入“hexo server”，在本地服务器查看博客内容是否有问题</li>
-<li>在终端输入“hexo g”把md文件转化成html文件和css文件</li>
-<li>在终端输入“hexo d”把本地写的博客发布到仓库</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1864,8 +1858,8 @@ margin-bottom: 10%;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -1912,7 +1906,7 @@ margin-bottom: 10%;
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
