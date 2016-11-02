@@ -175,7 +175,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -238,244 +238,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/01/mongodb/" itemprop="url">
-                  Untitled
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-01T22:56:18+08:00" content="2016-11-01">
-              2016-11-01
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>##mongodb<br>首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：<br>ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”</p>
-<p>安装完brew后先在终端更新一下：brew update</p>
-<p>然后安装mongodb：brew install mongodb</p>
-<p>###mongodb的使用（终端下的指令）</p>
-<p>####在终端启动：</p>
-<ul>
-<li>mongod —dbpath=数据库地址</li>
-<li>再在终端中键入mongo<br>####数据库的操作：</li>
-<li><p>1.创建数据库：use database_name </p>
-</li>
-<li><p>2.查看所有数据库：show dbs</p>
-</li>
-<li><p>3.查看当前使用的数据库：db 或 db.getName() </p>
-</li>
-<li><p>4.删除数据库：db.dropDatabase() </p>
-</li>
-</ul>
-<ul>
-<li><p>5.断开连接：exit</p>
-</li>
-<li><p>6.查看命令api：help</p>
-</li>
-</ul>
-<p>####集合的操作</p>
-<ul>
-<li>1、查看帮助api：db.worker.help()<br>￼</li>
-<li>2、查看当前数据库下有哪集合（collection）：show collections<br>￼</li>
-<li>3、创建集合（collection）</li>
-</ul>
-<p>//法1：db.createCollection(“collection_Name”)   </p>
-<p>//法2： db.collection_Name.insert(document)    </p>
-<p>注：两者的区别在于前者创建了一个空的集合，后者创建了一个空的集合并添加了一个Document数据</p>
-<ul>
-<li><p>4、删除当前数据库中的集合（collection）：db.collection_Name.drop()  </p>
-</li>
-<li><p>5、插入文档</p>
-</li>
-</ul>
-<p>使用insert()方法插入文档：</p>
-<p>db.collection_name.insert(document)  </p>
-<p>db.worker.insert([{name:’wangWu’,age:50},{name:’xiaoMing’,age:60}])<br>￼<br>使用save()方法插入文档</p>
-<p>db.collection_name.save(document)  </p>
-<p>注：如果不指定 _id 字段 save() 方法类似于 insert() 方法。如果指定 _id 字段，则会更新该 _id 的数据。</p>
-<p>db.person.save({name:”xiaoHong”,age:50})</p>
-<p>db.person.save({_id:ObjectId(“562c9caf671c978b6596e825”),name:”xiaoHong”,age:10})</p>
-<ul>
-<li>6、更新文档</li>
-</ul>
-<p>update()方法用于更新已存在的文档</p>
-<p>db.collection.update(query,update,{upset: boolean,multi: boolean,writeConcern: document})</p>
-<p>参数说明：</p>
-<p>query : update的查询条件，类似sql update查询内where后面的。</p>
-<p>update : update的对象和一些更新的操作符（如$set,$inc…）等 $inc在原基础上累加后更新   $set直接更新</p>
-<p>upsert  : 可选，这个参数的意思是，如果不存在update的记录，是否插入objNew,true为插入，默认是false，不插入。</p>
-<p>multi  : 可选，mongodb 默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。</p>
-<p>writeConcern  :可选，抛出异常的级别。</p>
-<p>实例</p>
-<pre><code>db.worker.update({name:’liSi’},{$set:{name:’liSi_update’}}) ￼
-db.worker.update({name:’liSi_update’}, {$set: {age:40}},{multi:true}) ￼
-db.worker.update({name:’liSi_update’},{$inc:{age:1}}) 2.save()方法通过传入的文档来替换已有文档
-</code></pre><p>save（）方法实现文档更新：</p>
-<p>db.collection.save(document,{writeConcern: document})</p>
-<p>参数说明：<br>  document : 文档数据。<br>  writeConcern  :可选，抛出异常的</p>
-<p>  实例</p>
-<pre><code>db.person.save({_id:ObjectId(“562c9caf671c978b6596e825”),name:”xiaoHong”,age:10})级别。
-</code></pre><ul>
-<li>7、文档删除</li>
-</ul>
-<p>remove()方法是用来移除集合中的数据。</p>
-<p>注：在执行remove()函数前先执行find()命令来判断执行的条件是否正确，这是一个比较。</p>
-<p>语法：db.collection.remove（query，justOne)<br>如果你的 MongoDB 是 2.6 版本以后的</p>
-<p>语法格如：db.collection.remove(query, {justOne: boolean,writeConcern: document}    </p>
-<p>参数说明：<br>query :（可选）删除的文档的条件。<br>justOne : （可选）如果设为 true 或 1，则只删除一个文档。<br>writeConcern  :（可选）抛出异常实例</p>
-<p>实例</p>
-<pre><code>db.worker.remove({name:’fJianZhou’}) 删除worker集合里name是fJianZhou的所有Document数据
-db.person.remove({name:”xiaoHong”},1)  删除person集合里name是xiaoHong的第一条数据_name 集合的名字
-</code></pre><ul>
-<li>8、文档查询</li>
-</ul>
-<p>（1.）find()方法：db.collection_name.find()  collection_name 集合的名字</p>
-<p>￼<br>（2.）find()方法 查询指定列：<br>实例</p>
-<pre><code>db.worker.find({},{age:1}) 查询指定列 
-</code></pre><p>￼<br>（3.）pretty()方法以格式化的方式来显示所有文档。</p>
-<p>实例</p>
-<pre><code>db.worker.find().pretty()
-</code></pre><p>￼<br>（4.）findOne()方法查询匹配结果的第一条数据</p>
-<ul>
-<li>9、查询条件操作符<br>￼</li>
-</ul>
-<p>（1）MongoDB (&gt;) 大于操作符 - $gt</p>
-<p>语法：db.collectionName.find({<key>:{$gt:<value>}})———-collectionName集合名词    key字段    value值</value></key></p>
-<p>实例<br>db.worker.find({age:{$gt:30}})———– 查询age 大于 30的数据</p>
-<p>￼<br>（2）MongoDB（&gt;=）大于等于操作符 - $gte</p>
-<p>语法:db.collectionName.find({<key>:{$gte:<value>}})———- collectionName集合名词    key字段    value值</value></key></p>
-<p>实例:db.worker.find({age: {$gte: 30}})———– 查询age 3大于等于30 的数据</p>
-<p>￼<br>（3）MongoDB (&lt;) 小于操作符 - $lt</p>
-<p>语法：db.collectionName.find( {<key>:{$lt:<value>}})———- collectionName集合名词    key字段    value值</value></key></p>
-<p>实例：db.worker.find({age: {$lt: 30}})———— 查询age 小于30的数据</p>
-<p>￼<br>（4）MongoDB (&lt;=) 小于等于操作符 - $lte</p>
-<p>语法：<br> db.collectionName.find({<key>:{$lte:<value>}})———– collectionName集合名词    key字段    value值</value></key></p>
-<p>实例：<br>db.worker.find({age: {$lte: 30}}) ————查询age 小于等于30的数据</p>
-<p>￼<br>（5）MongoDB 使用 (&gt;=) 和 (&lt;=) 查询 - $gte 和 $lte</p>
-<p>语法：<br> db.collectionName.find({<key>:{$gte:<value>},<key>:{$lte:<value>}})———– collectionName集合名词    key字段    value值</value></key></value></key></p>
-<p>实例：<br>db.worker.find({age: {$gte: 30, $lte: 50}}) ———–查询age 大于等于 30 并且 age 小于等于 50  的数据<br>￼</p>
-<p>（6）MongoDB 等于（==）</p>
-<p>语法：<br> db.collectionName.find({<key>:<value>,<key>:<value>}) ————-  collectionName集合名词    key字段    value值</value></key></value></key></p>
-<p>实例：<br>db.worker.find({“age”: 30})————查询age = 30的数据<br>￼</p>
-<p>（7）MongoDB 使用 _id进行查询</p>
-<p>语法：<br>db.collectionName.find({“_id” : ObjectId(“value”)})  ———–value _id的值</p>
-<p>实例：<br>db.worker.find({“_id” : ObjectId(“562af23062d5a57609133974”)})———— 查询_id是 562af23062d5a57609133974 数据<br>￼</p>
-<p>（8）MongoDB 查询某个结果集的数据的条数</p>
-<p>语法：<br>db.collectionName.find().count() ————-  collectionName集合名称</p>
-<p>实例：<br>db.worker.find().count()<br>￼</p>
-<p>（9）MongoDB 查询某个字段的值当中是否包含另一个值</p>
-<p>语法：<br>db.collection.find({key:/value/})  ————– collectionName集合名称 key 字段  value值</p>
-<p>实例：<br>db.worker.find({name:/value/}) ————-查询name里包含zhang的数据</p>
-<p>￼（10）MongoDB 查询某个字段的值当中是否以另一个值开头</p>
-<p>语法：<br>db.collection.find({key:/^value/})————collectionName集合名称 key 字段  value值</p>
-<p>实例：<br>db.worker.find({name:/^zhang/})</p>
-<p>（11）MongoDB 使用and和or条件查询<br>//and语法：db.worker.find({name:’tangcaiye’,age:30}) 查询name是tangcaiye并且age是30的数据</p>
-<p>//or语法：db.worker.find({$or:[{age = 30},{age = 50}]}) 查询age = 30 或者 age = 50  的数据</p>
-<p>//AND 和 OR 联合使用语法：</p>
-<p>db.worker.find({name:’tangcaiye’,$or:[{age:30},{age:50}]})</p>
-<ul>
-<li>10、MongoDB Limit与Skip方法</li>
-</ul>
-<p>1.Limit() 方法 ，读取指定数量的数据记录</p>
-<p>语法：<br>db.collectionName.find().limit(number)——–collectionName集合    number读取的条数</p>
-<p>实例：<br>db.worker.find().limit(3)—– 查询前3条数据<br>￼</p>
-<p>2.MongoDB Skip() 方法 跳过指定数量的数据。</p>
-<p>语法：<br>db.collectionName.find().skip(number)——–collectionName集合    number跳过的条数</p>
-<p>实例：<br>db.worker.find().skip(3)——–查询3条以后的数据<br>￼</p>
-<p>3.MongoDB Skip()方法和Limit()方法混合使用<br>注： 通常用这种方式来实现分页功能</p>
-<p>语法<br>db.collectionName.find().limit(number).skip(number)  </p>
-<p>实例<br>db.worker.find().sort({age:-1})——- 查询在4-6之间的数据</p>
-<ul>
-<li>11、排序</li>
-</ul>
-<p>MongoDB sort()方法可以通过参数指定排序的字段，其中 1 为升序排列，而-1是用于降序排列。</p>
-<p>语法：</p>
-<p>db.collectionName.find().sort({KEY:1}) 或者 db.collectionName.find().sort({KEY:-1})——-collectionName集合  key表示字段  </p>
-<p>实例：</p>
-<p>db.worker.find().sort({age:1})——-查询出并升序排序 {age:1}  age表示按那个字段排序 1表示升序</p>
-<p>db.worker.find().sort({age:-1})——-查询出并降序排序  {age:-1} age表示按那个字段排序 -1表示降序</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/01/node.js框架的基础使用/" itemprop="url">
+                <a class="post-title-link" href="/2016/11/02/node.js框架的基础使用/" itemprop="url">
                   node.js
                 </a>
               
@@ -488,9 +251,9 @@ db.person.remove({name:”xiaoHong”},1)  删除person集合里name是xiaoHong�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-01T00:00:00+08:00" content="2016-10-01">
-              2016-10-01
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2016-11-02T10:01:16+08:00" content="2016-11-02">
+              2016-11-02
             </time>
           </span>
 
@@ -708,7 +471,7 @@ db.person.remove({name:”xiaoHong”},1)  删除person集合里name是xiaoHong�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-07-05T11:48:15+08:00" content="2016-07-05">
               2016-07-05
             </time>
@@ -847,7 +610,7 @@ border-right: @the-border * 2;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-06-30T18:45:54+08:00" content="2016-06-30">
               2016-06-30
             </time>
@@ -1028,7 +791,7 @@ to{width: 1000px;}
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-06-29T20:36:35+08:00" content="2016-06-29">
               2016-06-29
             </time>
@@ -1171,7 +934,7 @@ to{width: 1000px;}
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-06-29T20:14:51+08:00" content="2016-06-29">
               2016-06-29
             </time>
@@ -1282,7 +1045,7 @@ to{width: 1000px;}
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-06-28T10:43:01+08:00" content="2016-06-28">
               2016-06-28
             </time>
@@ -1473,7 +1236,7 @@ to{width: 1000px;}
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-06-27T16:46:57+08:00" content="2016-06-27">
               2016-06-27
             </time>
@@ -1783,7 +1546,7 @@ display: block;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-06-27T14:51:42+08:00" content="2016-06-27">
               2016-06-27
             </time>
@@ -1887,7 +1650,7 @@ display: block;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-06-25T20:24:43+08:00" content="2016-06-25">
               2016-06-25
             </time>
@@ -1924,6 +1687,211 @@ display: block;
 -ms-transition:all 1.5s;
 transition:all 1.5s;
 </code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/24/css3单位/" itemprop="url">
+                  css3单位
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2016-06-24T11:50:28+08:00" content="2016-06-24">
+              2016-06-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS3单位"><a href="#CSS3单位" class="headerlink" title="CSS3单位"></a>CSS3单位</h1><h2 id="em-rem"><a href="#em-rem" class="headerlink" title="em/rem"></a>em/rem</h2><ul>
+<li>em单位是相对于父级的单位，可用于设置字体的大小和容器的宽高</li>
+<li>含义：em表示的含义是倍数，例如2em表示的含义为父级像素的两倍;rem单位是相对于html文档的单位，可用于设置字体的大小，不可设置容器的宽高</li>
+</ul>
+<ul>
+<li>举例：</li>
+</ul>
+<p>代码如下所示：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;单位&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;div1&quot; style=&quot;font-size:12px;&quot;&gt;
+    &lt;h1&gt;我是h1&lt;/h1&gt;
+    &lt;h2&gt;
+        &lt;div class=&quot;div3&quot; style=&quot;font-size:2em&quot;&gt;我是div3&lt;/div&gt;
+    &lt;/h2&gt;
+    &lt;div class=&quot;div2&quot; style=&quot;font-size:2em;width:3em;height:4em&quot;&gt;我是div2&lt;/div&gt;
+&lt;/div&gt;    
+&lt;div class=&quot;div4&quot; style=&quot;font-size:4rem&quot; &gt;我是div4&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>浏览器中的效果如下图所示：</p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei1.jpg" alt="danwei"></p>
+<p>分析：</p>
+<p>1、 div1的字号设置为12px；</p>
+<p>2、 h1的字号本身默认为2em，则h1的字号为24px；</p>
+<p>3、 h2的字号默认为1.5em。div3的字号为36px；</p>
+<p>4、 div2的字号为2em，其父级为div1（字号为12px），则div2的字体为24px；</p>
+<p>5、 div4的字号为html默认字体16px的4倍：64px；</p>
+<h2 id="vw、vh"><a href="#vw、vh" class="headerlink" title="vw、vh"></a>vw、vh</h2><ul>
+<li><p>vw和vh是相对于视觉窗口的，用于设置容器大小;</p>
+</li>
+<li><p>含义：作为宽和高的含义，vm和vh代表的是视觉窗口的百分比，如：width：50vw表示占视觉窗口的百分之五十；当浏览器窗口缩小的时候，容器的大小也会随着变小，一般用于响应式的网页设计。</p>
+</li>
+<li>举例：</li>
+</ul>
+<p>代码如下所示：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;单位&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;div1&quot; style=&quot;height:50vh;width:50vw;background:red;&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;    
+</code></pre><p>浏览器效果如图所示，div的长和宽始终保持为浏览器的百分之五十：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei2.jpg" alt="danwei"></p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei3.jpg" alt="danwei"></p>
+<h2 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h2><ul>
+<li>百分比是相对于父级窗口的，用于设置容器大小，也可用于设置字号大小</li>
+<li>举例：</li>
+</ul>
+<p>代码如下所示：</p>
+<p>html：  </p>
+<pre><code>    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;响应式&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;reset.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;xiangyingshi.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;ul&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://www.7186988.net/imgall/nfwwonbomr2ws5dbnzts4y3pnu/uploads/item/201604/06/20160406230153_nEVAh.thumb.700_0.jpeg&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>css样式：</p>
+<pre><code>ul{
+overflow: hidden;
+margin: 0 auto;
+}
+li{
+width: 30%;
+float: left;
+margin-right:1.2%;
+margin-bottom: 5%;
+min-width: 200px;
+border:2px  black solid;
+}
+ul li img{
+width:80%;
+margin-bottom: 10%;
+}
+</code></pre><p>效果图如下图所示：</p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei4.jpg" alt="danwei"></p>
+<p><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei5.jpg" alt="danwei"></p>
+<p>分析：无论怎么拉缩浏览器，li始终占据父级ul的百分之三十，父级ul继承父级body的宽度    </p>
+<h2 id="px"><a href="#px" class="headerlink" title="px"></a>px</h2><ul>
+<li>px属性是最常用的单位，即可以设置字号大小也可以设置容器的宽高。</li>
+</ul>
+<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><h2 id="maxwidth、maxheight、minheight、minwidth属性"><a href="#maxwidth、maxheight、minheight、minwidth属性" class="headerlink" title="maxwidth、maxheight、minheight、minwidth属性"></a>maxwidth、maxheight、minheight、minwidth属性</h2><ul>
+<li>maxwidth和maxheight用来设置容器等元素的最大宽和高，当元素小于最大宽和高的值时，元素保持为自身的宽高，当元素大于最大宽或高的值时，元素会适应容器的最大宽和高进行调整，不超过maxheight和maxwidth的值。</li>
+<li>minheight和minwidth用来设置容器等元素的最小宽和高，当元素大于最小宽和高的值时，元素保持为自身的宽高，当元素小于最小宽或高的值是，元素会适应容器的最小宽和高进行调整，扩充到最小宽和高。</li>
+<li>maxwidth、maxheight、minheight、minwidth属性的值一般为一个固定像素值。</li>
+<li>仍以上面的百分比的代码案例来分析：给每个li设置了最小宽度，当浏览器缩小到每个li小于200px时，li由于设置了最小宽度不会再继续缩小，而会自动变成两行，把最右边的li挤到下一行。</li>
+<li>效果图如图：<br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei6.jpg" alt="danwei"><br><img src="https://github.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/danwei7.jpg" alt="danwei"></li>
+</ul>
+
           
         
       
@@ -1996,8 +1964,8 @@ transition:all 1.5s;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">articles</span>
             </a>
           </div>
 
@@ -2048,7 +2016,7 @@ transition:all 1.5s;
 </div>
 
 <div class="theme-info">
-  Theme -
+  Thème -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
