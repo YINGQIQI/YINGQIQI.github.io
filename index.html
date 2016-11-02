@@ -238,8 +238,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/02/node.js框架的基础使用1/" itemprop="url">
-                  Unbenannt
+                <a class="post-title-link" href="/2016/10/01/node.js框架的基础使用1/" itemprop="url">
+                  node.js
                 </a>
               
             
@@ -252,8 +252,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-11-02T10:01:16+08:00" content="2016-11-02">
-              2016-11-02
+            <time itemprop="dateCreated" datetime="2016-10-01T00:00:00+08:00" content="2016-10-01">
+              2016-10-01
             </time>
           </span>
 
@@ -282,13 +282,10 @@
       
         
           
-            <p>#node.js框架的基础使用</p>
-<p>##node.js的出现</p>
-<p>####1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。</p>
+            <h1 id="node-js框架的基础使用"><a href="#node-js框架的基础使用" class="headerlink" title="node.js框架的基础使用"></a>node.js框架的基础使用</h1><h2 id="node-js的出现"><a href="#node-js的出现" class="headerlink" title="node.js的出现"></a>node.js的出现</h2><p>####1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。</p>
 <p>####2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。</p>
-<p>##node.js的基本使用<br>【注】：使用了webstorm工具</p>
-<p>###加载模块的使用</p>
-<ul>
+<h2 id="node-js的基本使用"><a href="#node-js的基本使用" class="headerlink" title="node.js的基本使用"></a>node.js的基本使用</h2><p>【注】：使用了webstorm工具</p>
+<h3 id="加载模块的使用"><a href="#加载模块的使用" class="headerlink" title="加载模块的使用"></a>加载模块的使用</h3><ul>
 <li>加载当前目录的模块<br>要导出一个属性或者方法使用:module.exports=xxx(需要导出的属性和方法)</li>
 </ul>
 <ul>
@@ -297,9 +294,8 @@
 <li><p>加载原生模块<br>原生模块直接在文件头部引入即可。</p>
 </li>
 </ul>
-<p>###npm（node的包管理器）<br>可以在终端中通过npm命令安装node的包</p>
-<p>###http服务器模块（http）</p>
-<ul>
+<h3 id="npm（node的包管理器）"><a href="#npm（node的包管理器）" class="headerlink" title="npm（node的包管理器）"></a>npm（node的包管理器）</h3><p>可以在终端中通过npm命令安装node的包</p>
+<h3 id="http服务器模块（http）"><a href="#http服务器模块（http）" class="headerlink" title="http服务器模块（http）"></a>http服务器模块（http）</h3><ul>
 <li><p>简单的发起一个请求</p>
 <pre><code>var http = require(“http”);    
 //引入一个http的模块 var server = http.createServer(function (req,res) {         //向前台响应内容(数据)     res.end(“大家好,我是唐菜也”); });     //listen(端口,域名,成功的回调) server.listen(8080,”localhost”, function () {    console.log(“服务器启动成功!”); });
@@ -311,8 +307,7 @@
 </code></pre></li>
 <li><p>上传文件处理：</p>
 <pre><code>    var http = require(“http”);     var url = require(“url”);     var fs = require(“fs”);     var formidable = require(“formidable”);     var server = http.createServer(function (req,res) {         //获取请求的路径         var urlObj = url.parse(req.url,true);         var pathname = urlObj.pathname;            if(pathname == “/upimg.html”){                 var rs = fs.createReadStream(“./upimg.html”);              rs.pipe(res);            }else if(pathname == “/upimg”){                 var form = new formidable.IncomingForm();             form.parse(req, function (err,fields,files) {             //fields-&gt;以对象格式返回字段            //将暂存文件写入到upload文件目录中                             fs.createReadStream(files.file1.path).pipe(fs.createWriteStream(“.upload/“+files.file1.name));             res.setHeader(“Content-Type”,”text/html;charset=utf8”);             res.write(JSON.stringify(fields));             res.end(‘&lt;img src=“/upload/‘+files.file1.name+’”&gt;’);         });     }else if(pathname != “/favicon.ico”){         fs.createReadStream(“.”+pathname).pipe(res);     } }).listen(8080);
-</code></pre><p>###文件处理模块（fs）</p>
-</li>
+</code></pre><h3 id="文件处理模块（fs）"><a href="#文件处理模块（fs）" class="headerlink" title="文件处理模块（fs）"></a>文件处理模块（fs）</h3></li>
 <li>小数据文件读取<br>readFile（异步）；readFileSync（同步）</li>
 <li><p>小数据文件写入：（参数1：写入的文件名；参数2：文件内容；参数3：配置参数；参数4：回调）</p>
 <pre><code>var fs = require(“fs”);
@@ -354,8 +349,7 @@ fs.createReadStream( 读取文件名 ).pipe( fs.createWriteStream( 写入文件�
 </code></pre></li>
 <li><p>修改文件名</p>
 <pre><code>fs.rename(“test2”,”test”, function (err) {         if (err){         console.error(err);     } });
-</code></pre><p>###继承模块（utile）</p>
-</li>
+</code></pre><h3 id="继承模块（utile）"><a href="#继承模块（utile）" class="headerlink" title="继承模块（utile）"></a>继承模块（utile）</h3></li>
 <li><p>对象中继承模块的使用</p>
 </li>
 </ul>
@@ -376,8 +370,7 @@ girl.setMaxListeners(2);
 //发射事件 girl.emit(“die”); girl.emit(“die”);
 //移除掉单个事件
 girl.removeListener(“ele”,boy1.response);
-</code></pre><p>###buffer对象</p>
-</li>
+</code></pre><h3 id="buffer对象"><a href="#buffer对象" class="headerlink" title="buffer对象"></a>buffer对象</h3></li>
 <li><p>创建buffer对象</p>
 <pre><code>//第一种创建方法（直接）
 var buff = new Buffer(12);//创建长度为12的数组 buf1.fill(255,0);//fill(填充的值,开始位置,结束位置(没有既全部)) //第二种创建方法（数组）
@@ -391,7 +384,7 @@ var buf4 = new Buffer([0xe5, 0x94, 0x90, 0xe8, 0x8f]);
 console.log(buf4.toString());
 //第二种
 var StringDecoder = require(“string_decoder”).StringDecoder; var decoder = new StringDecoder(); console.log(decoder.write(buff));
-</code></pre><p>###express模块<br>Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。<br>使用 Express 可以快速地搭建一个完整功能的网站。</p>
+</code></pre><h3 id="express模块"><a href="#express模块" class="headerlink" title="express模块"></a>express模块</h3><p>Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。<br>使用 Express 可以快速地搭建一个完整功能的网站。</p>
 </li>
 <li><p>express初始化</p>
 <pre><code>var express = require(“express”); var app = express();
@@ -409,7 +402,9 @@ var StringDecoder = require(“string_decoder”).StringDecoder; var decoder =
 <p>2、返回参数</p>
 <p>res.send();返回数据,默认会转为字符串,编码为utf8;</p>
 <p>res.sendFile();返回文件    </p>
-<p>res.sendStatus();返回状态码<br><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/raw/master/images/node1.jpg" alt="node1"></p>
+<p>res.sendStatus();返回状态码</p>
+<p>案列：</p>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node1.jpg" alt="node1"></p>
 
           
         
