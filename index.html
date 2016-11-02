@@ -308,24 +308,24 @@
 <h3 id="文件处理模块（fs）"><a href="#文件处理模块（fs）" class="headerlink" title="文件处理模块（fs）"></a>文件处理模块（fs）</h3><ul>
 <li>小数据文件读取<br>readFile（异步）；readFileSync（同步）</li>
 <li><p>小数据文件写入：（参数1：写入的文件名；参数2：文件内容；参数3：配置参数；参数4：回调）</p>
-<pre><code>var fs = require(“fs”);
+<pre><code>var fs = require(“fs”);            
 fs.writeFile(args1,args2,{flag:&quot;1&quot;},function(){})
 </code></pre></li>
 <li><p>小数据文件拷贝</p>
-<pre><code>fs.readFile(“读取文件名”,”utf8”,function(err,data){     fs.writeFile(“书写文件名”,data,{ encoding:”utf8”},function (err){}) });
+<pre><code>fs.readFile(“读取文件名”,”utf8”,function(err,data){             fs.writeFile(“书写文件名”,data,{ encoding:”utf8”},function (err){})          });
 </code></pre></li>
 <li><p>大数据文件读取文件流</p>
-<pre><code>var fs = require(‘fs’);
+<pre><code>var fs = require(‘fs’);        
 var rs = fs.createReadStream(‘文件名’);
 </code></pre></li>
 <li><p>大数据文件写入文件流</p>
-<pre><code>var fs = require(‘fs’);
+<pre><code>var fs = require(‘fs’);        
 var ws = fs.createWriteStream(‘文件名’)；//没有的话创建一个文件
 </code></pre></li>
 <li><p>大数据文件拷贝：</p>
 <p>  1、法一：</p>
-<pre><code>var fs = require(‘fs’); var rs = fs.createReadStream(‘读取文件夹名字’); var ws = fs.createWriteStream(‘写入文件夹名字’)；
-//data方法表示读取调用对象的数据 rs.on(‘data’,function(data_content){     ws.write(data_content,function(){}); });
+<pre><code>var fs = require(‘fs’);         var rs = fs.createReadStream(‘读取文件夹名字’);          var ws = fs.createWriteStream(‘写入文件夹名字’)；         
+//data方法表示读取调用对象的数据         rs.on(‘data’,function(data_content){              ws.write(data_content,function(){});          });
 </code></pre><p>  2、法二：pipe方法</p>
 <pre><code>var fs = require(‘fs’);
 fs.createReadStream( 读取文件名 ).pipe( fs.createWriteStream( 写入文件名 ) );
