@@ -93,10 +93,32 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node4.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node5.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node6.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node7.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node8.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node9.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node10.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node11.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node12.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node13.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node14.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node15.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node16.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node17.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node18.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node19.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node20.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node21.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node22.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node23.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node24.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node25.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node1.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node2.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node3.jpg">
-<meta property="og:updated_time" content="2016-11-02T04:39:49.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node26.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node27.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node28.jpg">
+<meta property="og:updated_time" content="2016-11-02T05:23:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js">
 <meta name="twitter:description" content="node.js框架的基础使用node.js的出现1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可">
@@ -308,89 +330,80 @@
 <p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node6.jpg" alt="node"></p>
 <h3 id="文件处理模块（fs）"><a href="#文件处理模块（fs）" class="headerlink" title="文件处理模块（fs）"></a>文件处理模块（fs）</h3><ul>
 <li>小数据文件读取<br>readFile（异步）；readFileSync（同步）</li>
-<li><p>小数据文件写入：（参数1：写入的文件名；参数2：文件内容；参数3：配置参数；参数4：回调）</p>
-<pre><code>var fs = require(“fs”);            
-fs.writeFile(args1,args2,{flag:&quot;1&quot;},function(){})
-</code></pre></li>
-<li><p>小数据文件拷贝</p>
-<pre><code>fs.readFile(“读取文件名”,”utf8”,function(err,data){             fs.writeFile(“书写文件名”,data,{ encoding:”utf8”},function (err){})          });
-</code></pre></li>
-<li><p>大数据文件读取文件流</p>
-<pre><code>var fs = require(‘fs’);        
-var rs = fs.createReadStream(‘文件名’);
-</code></pre></li>
-<li><p>大数据文件写入文件流</p>
-<pre><code>var fs = require(‘fs’);        
-var ws = fs.createWriteStream(‘文件名’)；//没有的话创建一个文件
-</code></pre></li>
+<li>小数据文件写入：（参数1：写入的文件名；参数2：文件内容；参数3：配置参数；参数4：回调）</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node7.jpg" alt="node"></p>
+<ul>
+<li>小数据文件拷贝</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node8.jpg" alt="node"></p>
+<ul>
+<li>大数据文件读取文件流</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node9.jpg" alt="node"></p>
+<ul>
+<li>大数据文件写入文件流</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node10.jpg" alt="node"></p>
+<ul>
 <li><p>大数据文件拷贝：</p>
 <p>  1、法一：</p>
-<pre><code>var fs = require(‘fs’);         var rs = fs.createReadStream(‘读取文件夹名字’);          var ws = fs.createWriteStream(‘写入文件夹名字’)；         
-//data方法表示读取调用对象的数据         rs.on(‘data’,function(data_content){              ws.write(data_content,function(){});          });
-</code></pre><p>  2、法二：pipe方法</p>
-<pre><code>var fs = require(‘fs’);
-fs.createReadStream( 读取文件名 ).pipe( fs.createWriteStream( 写入文件名 ) );
-</code></pre></li>
-<li><p>创建目录</p>
-<pre><code>fs.mkdir(“test”,0777, function (err) {});
-</code></pre></li>
-<li><p>读取目录</p>
-<pre><code>fs.readdir(“test”, function (err,files) {     if (err){            console.error(err);       }else{         console.log(files);    } });
-</code></pre></li>
-<li><p>查看文件或者目录详情</p>
-<pre><code>fs.stat(‘test’, function (err,stat) {     if (err){         console.error(err);     }else{         console.log(stat);         } });
-</code></pre></li>
-<li><p>判断文件是否存在</p>
-<pre><code>fs.exists(“test/1.jpg”, function (exists) {     console.log(exists); })
-</code></pre></li>
-<li><p>相对路径获取绝对路径</p>
-<pre><code>fs.realpath(“test”, function (err,path) {         console.log(path); });
-</code></pre></li>
-<li><p>修改文件名</p>
-<pre><code>fs.rename(“test2”,”test”, function (err) {         if (err){         console.error(err);     } });
-</code></pre><h3 id="继承模块（utile）"><a href="#继承模块（utile）" class="headerlink" title="继承模块（utile）"></a>继承模块（utile）</h3></li>
-<li><p>对象中继承模块的使用</p>
 </li>
 </ul>
-<pre><code>var util = require(“util”);
-//通过这种方式可以继承父类原型中的方法和属性
-util.inherits(Child,Parent);
-</code></pre><ul>
-<li><p>类型判断、正则验证</p>
-<pre><code>var util = require(“util”);
-util.isArray([])；
-util.isRegExp(/\d/)
-</code></pre><h3 id="事件模块"><a href="#事件模块" class="headerlink" title="事件模块"></a>事件模块</h3><p>事件又称为发布订阅模式，又称为观察者模式，当主题对象发生变化时,会通知所有的观察者对象,更新自己的行动</p>
-<pre><code>var events = require(“events”);
-    //绑定事件
-    girl.on(“lee”,boy1.response);     girl.addListener(“lee”,boy2.response);     girl.once(“die”,function (){         console.log(“死了”); });
-//设置最大的监听数量
-girl.setMaxListeners(2);
-//发射事件 girl.emit(“die”); girl.emit(“die”);
-//移除掉单个事件
-girl.removeListener(“ele”,boy1.response);
-</code></pre><h3 id="buffer对象"><a href="#buffer对象" class="headerlink" title="buffer对象"></a>buffer对象</h3></li>
-<li><p>创建buffer对象</p>
-<pre><code>//第一种创建方法（直接）
-var buff = new Buffer(12);//创建长度为12的数组 buf1.fill(255,0);//fill(填充的值,开始位置,结束位置(没有既全部)) //第二种创建方法（数组）
-var buff = new Buffer([1,255,0xb3]);
-//第三种创建方法（字符串）
-var buff = new Buffer(“唐菜也”);
-</code></pre></li>
-<li><p>buffer对象转化为字符串</p>
-<pre><code>//第一种
-var buf4 = new Buffer([0xe5, 0x94, 0x90, 0xe8, 0x8f]);
-console.log(buf4.toString());
-//第二种
-var StringDecoder = require(“string_decoder”).StringDecoder; var decoder = new StringDecoder(); console.log(decoder.write(buff));
-</code></pre><h3 id="express模块"><a href="#express模块" class="headerlink" title="express模块"></a>express模块</h3><p>Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。<br>使用 Express 可以快速地搭建一个完整功能的网站。</p>
-</li>
-<li><p>express初始化</p>
-<pre><code>var express = require(“express”); var app = express();
-</code></pre></li>
-<li><p>处理请求的方法 — 根据请求路径来处理客户端发出的GET请求<br>  app.get(path,cb);<br>  path:为请求的路径；<br>  cb:第二个参数为处理函数的回调,有两个参数request和response<br>  代码案例：</p>
-<pre><code>//处理get方式发送的请求 app.get(“/“, function (req,res) {     //返回一个静态文件        res.sendFile(__dirname+”/post.html”); }); app.get(“/list”, function (req,res) {     //返回一个字符串     res.send(“get”+req.url); }); app.post(“/list”, function (req,res) {     res.send(“post”+req.url); }); //all就是处理不管是任何方式发送的请求,*为任意路径 app.all(“*”, function (req,res) {     res.send(“Welcome to Express”); }); //设置端口号 app.listen(8080);
-</code></pre></li>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node11.jpg" alt="node"><br>    2、法二：pipe方法</p>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node12.jpg" alt="node"></p>
+<ul>
+<li>创建目录</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node13.jpg" alt="node"></p>
+<ul>
+<li>读取目录</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node14.jpg" alt="node"></p>
+<ul>
+<li>查看文件或者目录详情</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node15.jpg" alt="node"></p>
+<ul>
+<li>判断文件是否存在</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node16.jpg" alt="node"></p>
+<ul>
+<li>相对路径获取绝对路径</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node17.jpg" alt="node"></p>
+<ul>
+<li>修改文件名</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node18.jpg" alt="node"></p>
+<h3 id="继承模块（utile）"><a href="#继承模块（utile）" class="headerlink" title="继承模块（utile）"></a>继承模块（utile）</h3><ul>
+<li>对象中继承模块的使用</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node19.jpg" alt="node"></p>
+<ul>
+<li>类型判断、正则验证</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node20.jpg" alt="node"></p>
+<h3 id="事件模块"><a href="#事件模块" class="headerlink" title="事件模块"></a>事件模块</h3><p>事件又称为发布订阅模式，又称为观察者模式，当主题对象发生变化时,会通知所有的观察者对象,更新自己的行动</p>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node21.jpg" alt="node"></p>
+<h3 id="buffer对象"><a href="#buffer对象" class="headerlink" title="buffer对象"></a>buffer对象</h3><ul>
+<li>创建buffer对象</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node22.jpg" alt="node"></p>
+<ul>
+<li>buffer对象转化为字符串</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node23.jpg" alt="node"></p>
+<h3 id="express模块"><a href="#express模块" class="headerlink" title="express模块"></a>express模块</h3><p>Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。<br>使用 Express 可以快速地搭建一个完整功能的网站。</p>
+<ul>
+<li>express初始化</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node24.jpg" alt="node"></p>
+<ul>
+<li>处理请求的方法 — 根据请求路径来处理客户端发出的GET请求<br>  app.get(path,cb);<br>  path:为请求的路径；<br>  cb:第二个参数为处理函数的回调,有两个参数request和response<br>  代码案例：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node25.jpg" alt="node"></p>
+<ul>
 <li>参数：</li>
 </ul>
 <p>1、请求参数：</p>
@@ -418,35 +431,8 @@ var StringDecoder = require(“string_decoder”).StringDecoder; var decoder =
 <p>案列：</p>
 <p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node3.jpg" alt="node"></p>
 <h3 id="mongoose模块（mongoose）"><a href="#mongoose模块（mongoose）" class="headerlink" title="mongoose模块（mongoose）"></a>mongoose模块（mongoose）</h3><p>首先用npm包管理工具安装mongoose模块</p>
-<pre><code>var mongoose = require(“mongoose”); var db = mongoose.connect(“mongodb://user:pass@localhost:port/database”);
-db.connection.on(“error”, function (error) {
-    console.log(“数据库连接失败：” + error);
-});
-db.connection.on(“open”, function () {
-    console.log(“数据库连接成功”);
-}); //集合的数据模型定义,定义了字段名和字段的类型, 默认值 var PersonSchema = new mongoose.Schema({        name : { type:String },     age  : { type:Number, default:0 },     time : { type:Date, default:Date.now },     email: { type:String,default:’’} },{     collection:’jihe’ });    
-//创建model  model(集合名称,集合的数据模型) var Model = db.model(“jihe”,PersonSchema);
-//创建一个文档 var jiheEntity = new Model({     name:”tangcaiye”,        age:8,     email:”641418330@qq.com” }); jiheEntity.save(function (error,doc) {     if (error){             console.log(error);     }else{         console.log(doc);     } });
-//插入一条数据
-Model.create({name:”zhangsan”,age:”15”}, function (err,doc) {     if (err){        console.log(err);  }else{     console.log(doc);  } });
-//更新数据        
-var query = {name:”zhangsan”}; var update = {$set:{age:100}}; Model.find(query, function (err,doc) {     console.log(doc); }); Model.update(query,update, function (error) {     if (error){         console.log(error);     }else {         console.log(“更新成功”);     } })
-//请注意如果匹配到多条记录，默认只更新一条，如果要更新匹配到的所有记录的话需要加一个参数 {multi:true}
-PersonModel.update(conditions, update,{multi:true},function(error){
-if(error) {
-            console.log(error);
-    } else {
-        console.log(‘Update success!’);
-    }
-});
-//删除数据
-var query = {name:”zhangsan”}; Model.remove(query, function (err) {     if (err){             console.log(err);     }else {             console.log(“删除成功”);     } }) //属性过滤
-find(Conditions,field,callback);
-findOne(Conditions,callback);
-indById(_id, callback);
-//高级查询,query查询语句就是上面mongodb的查询语句
-Model.find({query},function(err,data){})
-</code></pre>
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node26.jpg" alt="mongodb"><br><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node27.jpg" alt="mongodb"><br><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node28.jpg" alt="mongodb"></p>
+
       
     </div>
 
