@@ -92,7 +92,8 @@
 <meta property="og:description" content="node.js框架的基础使用node.js的出现1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可">
 <meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node1.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node2.jpg">
-<meta property="og:updated_time" content="2016-11-02T03:38:48.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node3.jpg">
+<meta property="og:updated_time" content="2016-11-02T03:44:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js">
 <meta name="twitter:description" content="node.js框架的基础使用node.js的出现1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可">
@@ -412,7 +413,37 @@ var StringDecoder = require(“string_decoder”).StringDecoder; var decoder =
 <li>cookie:首先需要安装cookie-parser模</li>
 </ul>
 <p>案列：</p>
-
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node3.jpg" alt="node"></p>
+<h3 id="mongoose模块（mongoose）"><a href="#mongoose模块（mongoose）" class="headerlink" title="mongoose模块（mongoose）"></a>mongoose模块（mongoose）</h3><p>首先用npm包管理工具安装mongoose模块</p>
+<pre><code>var mongoose = require(“mongoose”); var db = mongoose.connect(“mongodb://user:pass@localhost:port/database”);
+db.connection.on(“error”, function (error) {
+    console.log(“数据库连接失败：” + error);
+});
+db.connection.on(“open”, function () {
+    console.log(“数据库连接成功”);
+}); //集合的数据模型定义,定义了字段名和字段的类型, 默认值 var PersonSchema = new mongoose.Schema({        name : { type:String },     age  : { type:Number, default:0 },     time : { type:Date, default:Date.now },     email: { type:String,default:’’} },{     collection:’jihe’ });    
+//创建model  model(集合名称,集合的数据模型) var Model = db.model(“jihe”,PersonSchema);
+//创建一个文档 var jiheEntity = new Model({     name:”tangcaiye”,        age:8,     email:”641418330@qq.com” }); jiheEntity.save(function (error,doc) {     if (error){             console.log(error);     }else{         console.log(doc);     } });
+//插入一条数据
+Model.create({name:”zhangsan”,age:”15”}, function (err,doc) {     if (err){        console.log(err);  }else{     console.log(doc);  } });
+//更新数据        
+var query = {name:”zhangsan”}; var update = {$set:{age:100}}; Model.find(query, function (err,doc) {     console.log(doc); }); Model.update(query,update, function (error) {     if (error){         console.log(error);     }else {         console.log(“更新成功”);     } })
+//请注意如果匹配到多条记录，默认只更新一条，如果要更新匹配到的所有记录的话需要加一个参数 {multi:true}
+PersonModel.update(conditions, update,{multi:true},function(error){
+if(error) {
+            console.log(error);
+    } else {
+        console.log(‘Update success!’);
+    }
+});
+//删除数据
+var query = {name:”zhangsan”}; Model.remove(query, function (err) {     if (err){             console.log(err);     }else {             console.log(“删除成功”);     } }) //属性过滤
+find(Conditions,field,callback);
+findOne(Conditions,callback);
+indById(_id, callback);
+//高级查询,query查询语句就是上面mongodb的查询语句
+Model.find({query},function(err,data){})
+</code></pre>
       
     </div>
 
@@ -542,7 +573,7 @@ var StringDecoder = require(“string_decoder”).StringDecoder; var decoder =
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#node-js框架的基础使用"><span class="nav-number">1.</span> <span class="nav-text">node.js框架的基础使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js的出现"><span class="nav-number">1.1.</span> <span class="nav-text">node.js的出现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、因此node-js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js的基本使用"><span class="nav-number">1.2.</span> <span class="nav-text">node.js的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加载模块的使用"><span class="nav-number">1.2.1.</span> <span class="nav-text">加载模块的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm（node的包管理器）"><span class="nav-number">1.2.2.</span> <span class="nav-text">npm（node的包管理器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http服务器模块（http）"><span class="nav-number">1.2.3.</span> <span class="nav-text">http服务器模块（http）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件处理模块（fs）"><span class="nav-number">1.2.4.</span> <span class="nav-text">文件处理模块（fs）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承模块（utile）"><span class="nav-number">1.2.5.</span> <span class="nav-text">继承模块（utile）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件模块"><span class="nav-number">1.2.6.</span> <span class="nav-text">事件模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#buffer对象"><span class="nav-number">1.2.7.</span> <span class="nav-text">buffer对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#express模块"><span class="nav-number">1.2.8.</span> <span class="nav-text">express模块</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#node-js框架的基础使用"><span class="nav-number">1.</span> <span class="nav-text">node.js框架的基础使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js的出现"><span class="nav-number">1.1.</span> <span class="nav-text">node.js的出现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1、JavaScript不能handle大规模的代码，在Java中有一个重要带概念——package，逻辑上相关的代码组织到同一个包内，那么外部如果使用，直接import对应的package即可。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、因此node-js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2、因此node.js被开发出来，实现了类似于与java中的包功能（模块），很多优秀的前端工程师设计了不同的功能模块，程序员在需要的时候只要进行模块引入即可。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js的基本使用"><span class="nav-number">1.2.</span> <span class="nav-text">node.js的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加载模块的使用"><span class="nav-number">1.2.1.</span> <span class="nav-text">加载模块的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm（node的包管理器）"><span class="nav-number">1.2.2.</span> <span class="nav-text">npm（node的包管理器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http服务器模块（http）"><span class="nav-number">1.2.3.</span> <span class="nav-text">http服务器模块（http）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件处理模块（fs）"><span class="nav-number">1.2.4.</span> <span class="nav-text">文件处理模块（fs）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承模块（utile）"><span class="nav-number">1.2.5.</span> <span class="nav-text">继承模块（utile）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件模块"><span class="nav-number">1.2.6.</span> <span class="nav-text">事件模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#buffer对象"><span class="nav-number">1.2.7.</span> <span class="nav-text">buffer对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#express模块"><span class="nav-number">1.2.8.</span> <span class="nav-text">express模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mongoose模块（mongoose）"><span class="nav-number">1.2.9.</span> <span class="nav-text">mongoose模块（mongoose）</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

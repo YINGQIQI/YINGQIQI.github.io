@@ -415,7 +415,37 @@ var StringDecoder = require(“string_decoder”).StringDecoder; var decoder =
 <li>cookie:首先需要安装cookie-parser模</li>
 </ul>
 <p>案列：</p>
-
+<p><img src="https://raw.githubusercontent.com/YINGQIQI/YINGQIQI.github.io/master/images/node3.jpg" alt="node"></p>
+<h3 id="mongoose模块（mongoose）"><a href="#mongoose模块（mongoose）" class="headerlink" title="mongoose模块（mongoose）"></a>mongoose模块（mongoose）</h3><p>首先用npm包管理工具安装mongoose模块</p>
+<pre><code>var mongoose = require(“mongoose”); var db = mongoose.connect(“mongodb://user:pass@localhost:port/database”);
+db.connection.on(“error”, function (error) {
+    console.log(“数据库连接失败：” + error);
+});
+db.connection.on(“open”, function () {
+    console.log(“数据库连接成功”);
+}); //集合的数据模型定义,定义了字段名和字段的类型, 默认值 var PersonSchema = new mongoose.Schema({        name : { type:String },     age  : { type:Number, default:0 },     time : { type:Date, default:Date.now },     email: { type:String,default:’’} },{     collection:’jihe’ });    
+//创建model  model(集合名称,集合的数据模型) var Model = db.model(“jihe”,PersonSchema);
+//创建一个文档 var jiheEntity = new Model({     name:”tangcaiye”,        age:8,     email:”641418330@qq.com” }); jiheEntity.save(function (error,doc) {     if (error){             console.log(error);     }else{         console.log(doc);     } });
+//插入一条数据
+Model.create({name:”zhangsan”,age:”15”}, function (err,doc) {     if (err){        console.log(err);  }else{     console.log(doc);  } });
+//更新数据        
+var query = {name:”zhangsan”}; var update = {$set:{age:100}}; Model.find(query, function (err,doc) {     console.log(doc); }); Model.update(query,update, function (error) {     if (error){         console.log(error);     }else {         console.log(“更新成功”);     } })
+//请注意如果匹配到多条记录，默认只更新一条，如果要更新匹配到的所有记录的话需要加一个参数 {multi:true}
+PersonModel.update(conditions, update,{multi:true},function(error){
+if(error) {
+            console.log(error);
+    } else {
+        console.log(‘Update success!’);
+    }
+});
+//删除数据
+var query = {name:”zhangsan”}; Model.remove(query, function (err) {     if (err){             console.log(err);     }else {             console.log(“删除成功”);     } }) //属性过滤
+find(Conditions,field,callback);
+findOne(Conditions,callback);
+indById(_id, callback);
+//高级查询,query查询语句就是上面mongodb的查询语句
+Model.find({query},function(err,data){})
+</code></pre>
           
         
       
