@@ -1,0 +1,692 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="##mongodb首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”
+安装完brew后先在终端更新一下：brew update
+然后安装mongodb：brew install mongodb
+###">
+<meta property="og:type" content="article">
+<meta property="og:title" content="哈七哈七玛">
+<meta property="og:url" content="http://yoursite.com/2016/11/01/mongodb/index.html">
+<meta property="og:site_name" content="哈七哈七玛">
+<meta property="og:description" content="##mongodb首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”
+安装完brew后先在终端更新一下：brew update
+然后安装mongodb：brew install mongodb
+###">
+<meta property="og:updated_time" content="2016-11-02T05:39:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="哈七哈七玛">
+<meta name="twitter:description" content="##mongodb首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”
+安装完brew后先在终端更新一下：brew update
+然后安装mongodb：brew install mongodb
+###">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/01/mongodb/"/>
+
+  <title>  | 哈七哈七玛 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">哈七哈七玛</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T22:56:18+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>##mongodb<br>首先介绍一下homebrew：brew是一个Mac系统下的软件包管理工具，先安装brew，参考Homebrew官网的安装方法，终端下命令：<br>ruby -e “$(curl -fsSkL raw.github.com/mxcl/homebrew/go)”</p>
+<p>安装完brew后先在终端更新一下：brew update</p>
+<p>然后安装mongodb：brew install mongodb</p>
+<p>###mongodb的使用（终端下的指令）</p>
+<p>####在终端启动：</p>
+<ul>
+<li>mongod —dbpath=数据库地址</li>
+<li>再在终端中键入mongo<br>####数据库的操作：</li>
+<li><p>1.创建数据库：use database_name </p>
+</li>
+<li><p>2.查看所有数据库：show dbs</p>
+</li>
+<li><p>3.查看当前使用的数据库：db 或 db.getName() </p>
+</li>
+<li><p>4.删除数据库：db.dropDatabase() </p>
+</li>
+</ul>
+<ul>
+<li><p>5.断开连接：exit</p>
+</li>
+<li><p>6.查看命令api：help</p>
+</li>
+</ul>
+<p>####集合的操作</p>
+<ul>
+<li>1、查看帮助api：db.worker.help()<br>￼</li>
+<li>2、查看当前数据库下有哪集合（collection）：show collections<br>￼</li>
+<li>3、创建集合（collection）</li>
+</ul>
+<p>//法1：db.createCollection(“collection_Name”)   </p>
+<p>//法2： db.collection_Name.insert(document)    </p>
+<p>注：两者的区别在于前者创建了一个空的集合，后者创建了一个空的集合并添加了一个Document数据</p>
+<ul>
+<li><p>4、删除当前数据库中的集合（collection）：db.collection_Name.drop()  </p>
+</li>
+<li><p>5、插入文档</p>
+</li>
+</ul>
+<p>使用insert()方法插入文档：</p>
+<p>db.collection_name.insert(document)  </p>
+<p>db.worker.insert([{name:’wangWu’,age:50},{name:’xiaoMing’,age:60}])<br>￼<br>使用save()方法插入文档</p>
+<p>db.collection_name.save(document)  </p>
+<p>注：如果不指定 _id 字段 save() 方法类似于 insert() 方法。如果指定 _id 字段，则会更新该 _id 的数据。</p>
+<p>db.person.save({name:”xiaoHong”,age:50})</p>
+<p>db.person.save({_id:ObjectId(“562c9caf671c978b6596e825”),name:”xiaoHong”,age:10})</p>
+<ul>
+<li>6、更新文档</li>
+</ul>
+<p>update()方法用于更新已存在的文档</p>
+<p>db.collection.update(query,update,{upset: boolean,multi: boolean,writeConcern: document})</p>
+<p>参数说明：</p>
+<p>query : update的查询条件，类似sql update查询内where后面的。</p>
+<p>update : update的对象和一些更新的操作符（如$set,$inc…）等 $inc在原基础上累加后更新   $set直接更新</p>
+<p>upsert  : 可选，这个参数的意思是，如果不存在update的记录，是否插入objNew,true为插入，默认是false，不插入。</p>
+<p>multi  : 可选，mongodb 默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。</p>
+<p>writeConcern  :可选，抛出异常的级别。</p>
+<p>实例</p>
+<pre><code>db.worker.update({name:’liSi’},{$set:{name:’liSi_update’}}) ￼
+db.worker.update({name:’liSi_update’}, {$set: {age:40}},{multi:true}) ￼
+db.worker.update({name:’liSi_update’},{$inc:{age:1}}) 2.save()方法通过传入的文档来替换已有文档
+</code></pre><p>save（）方法实现文档更新：</p>
+<p>db.collection.save(document,{writeConcern: document})</p>
+<p>参数说明：<br>  document : 文档数据。<br>  writeConcern  :可选，抛出异常的</p>
+<p>  实例</p>
+<pre><code>db.person.save({_id:ObjectId(“562c9caf671c978b6596e825”),name:”xiaoHong”,age:10})级别。
+</code></pre><ul>
+<li>7、文档删除</li>
+</ul>
+<p>remove()方法是用来移除集合中的数据。</p>
+<p>注：在执行remove()函数前先执行find()命令来判断执行的条件是否正确，这是一个比较。</p>
+<p>语法：db.collection.remove（query，justOne)<br>如果你的 MongoDB 是 2.6 版本以后的</p>
+<p>语法格如：db.collection.remove(query, {justOne: boolean,writeConcern: document}    </p>
+<p>参数说明：<br>query :（可选）删除的文档的条件。<br>justOne : （可选）如果设为 true 或 1，则只删除一个文档。<br>writeConcern  :（可选）抛出异常实例</p>
+<p>实例</p>
+<pre><code>db.worker.remove({name:’fJianZhou’}) 删除worker集合里name是fJianZhou的所有Document数据
+db.person.remove({name:”xiaoHong”},1)  删除person集合里name是xiaoHong的第一条数据_name 集合的名字
+</code></pre><ul>
+<li>8、文档查询</li>
+</ul>
+<p>（1.）find()方法：db.collection_name.find()  collection_name 集合的名字</p>
+<p>￼<br>（2.）find()方法 查询指定列：<br>实例</p>
+<pre><code>db.worker.find({},{age:1}) 查询指定列 
+</code></pre><p>￼<br>（3.）pretty()方法以格式化的方式来显示所有文档。</p>
+<p>实例</p>
+<pre><code>db.worker.find().pretty()
+</code></pre><p>￼<br>（4.）findOne()方法查询匹配结果的第一条数据</p>
+<ul>
+<li>9、查询条件操作符<br>￼</li>
+</ul>
+<p>（1）MongoDB (&gt;) 大于操作符 - $gt</p>
+<p>语法：db.collectionName.find({<key>:{$gt:<value>}})———-collectionName集合名词    key字段    value值</value></key></p>
+<p>实例<br>db.worker.find({age:{$gt:30}})———– 查询age 大于 30的数据</p>
+<p>￼<br>（2）MongoDB（&gt;=）大于等于操作符 - $gte</p>
+<p>语法:db.collectionName.find({<key>:{$gte:<value>}})———- collectionName集合名词    key字段    value值</value></key></p>
+<p>实例:db.worker.find({age: {$gte: 30}})———– 查询age 3大于等于30 的数据</p>
+<p>￼<br>（3）MongoDB (&lt;) 小于操作符 - $lt</p>
+<p>语法：db.collectionName.find( {<key>:{$lt:<value>}})———- collectionName集合名词    key字段    value值</value></key></p>
+<p>实例：db.worker.find({age: {$lt: 30}})———— 查询age 小于30的数据</p>
+<p>￼<br>（4）MongoDB (&lt;=) 小于等于操作符 - $lte</p>
+<p>语法：<br> db.collectionName.find({<key>:{$lte:<value>}})———– collectionName集合名词    key字段    value值</value></key></p>
+<p>实例：<br>db.worker.find({age: {$lte: 30}}) ————查询age 小于等于30的数据</p>
+<p>￼<br>（5）MongoDB 使用 (&gt;=) 和 (&lt;=) 查询 - $gte 和 $lte</p>
+<p>语法：<br> db.collectionName.find({<key>:{$gte:<value>},<key>:{$lte:<value>}})———– collectionName集合名词    key字段    value值</value></key></value></key></p>
+<p>实例：<br>db.worker.find({age: {$gte: 30, $lte: 50}}) ———–查询age 大于等于 30 并且 age 小于等于 50  的数据<br>￼</p>
+<p>（6）MongoDB 等于（==）</p>
+<p>语法：<br> db.collectionName.find({<key>:<value>,<key>:<value>}) ————-  collectionName集合名词    key字段    value值</value></key></value></key></p>
+<p>实例：<br>db.worker.find({“age”: 30})————查询age = 30的数据<br>￼</p>
+<p>（7）MongoDB 使用 _id进行查询</p>
+<p>语法：<br>db.collectionName.find({“_id” : ObjectId(“value”)})  ———–value _id的值</p>
+<p>实例：<br>db.worker.find({“_id” : ObjectId(“562af23062d5a57609133974”)})———— 查询_id是 562af23062d5a57609133974 数据<br>￼</p>
+<p>（8）MongoDB 查询某个结果集的数据的条数</p>
+<p>语法：<br>db.collectionName.find().count() ————-  collectionName集合名称</p>
+<p>实例：<br>db.worker.find().count()<br>￼</p>
+<p>（9）MongoDB 查询某个字段的值当中是否包含另一个值</p>
+<p>语法：<br>db.collection.find({key:/value/})  ————– collectionName集合名称 key 字段  value值</p>
+<p>实例：<br>db.worker.find({name:/value/}) ————-查询name里包含zhang的数据</p>
+<p>￼（10）MongoDB 查询某个字段的值当中是否以另一个值开头</p>
+<p>语法：<br>db.collection.find({key:/^value/})————collectionName集合名称 key 字段  value值</p>
+<p>实例：<br>db.worker.find({name:/^zhang/})</p>
+<p>（11）MongoDB 使用and和or条件查询<br>//and语法：db.worker.find({name:’tangcaiye’,age:30}) 查询name是tangcaiye并且age是30的数据</p>
+<p>//or语法：db.worker.find({$or:[{age = 30},{age = 50}]}) 查询age = 30 或者 age = 50  的数据</p>
+<p>//AND 和 OR 联合使用语法：</p>
+<p>db.worker.find({name:’tangcaiye’,$or:[{age:30},{age:50}]})</p>
+<ul>
+<li>10、MongoDB Limit与Skip方法</li>
+</ul>
+<p>1.Limit() 方法 ，读取指定数量的数据记录</p>
+<p>语法：<br>db.collectionName.find().limit(number)——–collectionName集合    number读取的条数</p>
+<p>实例：<br>db.worker.find().limit(3)—– 查询前3条数据<br>￼</p>
+<p>2.MongoDB Skip() 方法 跳过指定数量的数据。</p>
+<p>语法：<br>db.collectionName.find().skip(number)——–collectionName集合    number跳过的条数</p>
+<p>实例：<br>db.worker.find().skip(3)——–查询3条以后的数据<br>￼</p>
+<p>3.MongoDB Skip()方法和Limit()方法混合使用<br>注： 通常用这种方式来实现分页功能</p>
+<p>语法<br>db.collectionName.find().limit(number).skip(number)  </p>
+<p>实例<br>db.worker.find().sort({age:-1})——- 查询在4-6之间的数据</p>
+<ul>
+<li>11、排序</li>
+</ul>
+<p>MongoDB sort()方法可以通过参数指定排序的字段，其中 1 为升序排列，而-1是用于降序排列。</p>
+<p>语法：</p>
+<p>db.collectionName.find().sort({KEY:1}) 或者 db.collectionName.find().sort({KEY:-1})——-collectionName集合  key表示字段  </p>
+<p>实例：</p>
+<p>db.worker.find().sort({age:1})——-查询出并升序排序 {age:1}  age表示按那个字段排序 1表示升序</p>
+<p>db.worker.find().sort({age:-1})——-查询出并降序排序  {age:-1} age表示按那个字段排序 -1表示降序</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/01/node.js框架的基础使用/" rel="next" title="node.js">
+                <i class="fa fa-chevron-left"></i> node.js
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
